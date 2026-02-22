@@ -33,7 +33,7 @@ RUN npm ci --only=production
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
 COPY --from=builder /app/next.config.mjs ./
-COPY --from=builder /app/CHANGELOG.md ./CHANGELOG.md
+# COPY --from=builder /app/CHANGELOG.md ./CHANGELOG.md
 
 # Exponer el puerto
 EXPOSE 3000
@@ -43,3 +43,4 @@ ENV NODE_ENV=production
 
 # Comando para iniciar la aplicación
 CMD ["npm", "start"]
+
