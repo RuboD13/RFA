@@ -27,7 +27,7 @@ export default function TerminosPage() {
 
           <div className="prose prose-gray dark:prose-invert max-w-none space-y-12">
             <div className="p-4 bg-muted/50 rounded-lg border border-border text-sm text-muted-foreground">
-              <strong>Última actualización:</strong> {new Date().toLocaleDateString("es-ES", { year: "numeric", month: "long", day: "numeric" })}
+              <strong>Última actualización:</strong> 06 de marzo de 2026
             </div>
 
             <section>

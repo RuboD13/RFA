@@ -30,7 +30,7 @@ const tabs = [
     id: "anuncios",
     label: "Centro de Anuncios",
     icon: Building2,
-    description: "Control de todos tus inmuebles activos con métricas de rendimiento y consumo del plan.",
+    description: "Control de todos tus inmuebles activos con métricas de rendimiento y consumo del plan anual.",
   },
   {
     id: "metricas",

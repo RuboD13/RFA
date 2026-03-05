@@ -29,15 +29,15 @@ export function HeroSection() {
 
         {/* Hero Headline */}
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground text-balance max-w-5xl leading-[1.1] mb-6 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100">
-          Gestión completa de leads de inquilinos <br className="hidden sm:block" />
+          Deja de perseguir leads de alquiler  <br className="hidden sm:block" />
           <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/50 bg-clip-text text-transparent">
-            para alquileres con IA
+            de portales inmobiliarios
           </span>
         </h1>
 
         {/* Subheadline */}
         <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl text-pretty mb-10 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
-          RentAFlow atiende tus leads en WhatsApp, pide datos y documentación, y coordina visitas mientras tú cierras tratos.
+          RentAFlow responde a tus leads por email y WhatsApp, recopila la información clave y agenda visitas automáticamente.
         </p>
 
         {/* CTAs */}
