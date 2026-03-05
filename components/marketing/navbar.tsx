@@ -66,7 +66,7 @@ export function Navbar() {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
             <Button variant="ghost" size="sm" asChild>
-              <Link href="#contacto">Iniciar Sesión</Link>
+              <Link href="https://app.rentaflow.es/login">Iniciar Sesión</Link>
             </Button>
             <Button size="sm" asChild>
               <Link href="#contacto">Reservar Demo</Link>
@@ -99,7 +99,7 @@ export function Navbar() {
               ))}
               <div className="flex flex-col gap-2 px-4 pt-4 border-t border-border">
                 <Button variant="outline" size="sm" asChild>
-                  <Link href="#contacto">Iniciar Sesión</Link>
+                  <Link href="https://app.rentaflow.es/login">Iniciar Sesión</Link>
                 </Button>
                 <Button size="sm" asChild>
                   <Link href="#contacto">Reservar Demo</Link>
