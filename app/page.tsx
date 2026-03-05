@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/marketing/navbar"
 import { HeroSection } from "@/components/marketing/hero-section"
 import { PartnersSection } from "@/components/marketing/partners-section"
+import { IntegrationsSection } from "@/components/marketing/integrations-section"
 import { BenefitsGrid } from "@/components/marketing/benefits-grid"
 import { HowItWorks } from "@/components/marketing/how-it-works"
 import { DashboardPreview } from "@/components/marketing/dashboard-preview"
@@ -17,6 +18,7 @@ export default function HomePage() {
       <HeroSection />
       <PartnersSection />
       <BenefitsGrid />
+      <IntegrationsSection />
       <HowItWorks />
       <DashboardPreview />
       <PricingCards />
