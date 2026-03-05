@@ -2,6 +2,8 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter, Geist_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
+import { DemoModalProvider } from "@/components/marketing/demo-modal-context"
+import { DemoModal } from "@/components/marketing/demo-modal"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
@@ -41,7 +43,10 @@ export default function RootLayout({
   return (
     <html lang="es" className="scroll-smooth">
       <body className={`${inter.variable} ${geistMono.variable} font-sans antialiased`}>
-        {children}
+        <DemoModalProvider>
+          {children}
+          <DemoModal />
+        </DemoModalProvider>
         <Analytics />
       </body>
     </html>

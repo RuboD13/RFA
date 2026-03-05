@@ -4,6 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
+import { useDemoModal } from "./demo-modal-context"
 
 const navLinks = [
   { href: "#como-funciona", label: "Cómo Funciona" },
@@ -14,6 +15,7 @@ const navLinks = [
 ]
 
 export function Navbar() {
+  const { openDemoModal } = useDemoModal()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
@@ -68,8 +70,8 @@ export function Navbar() {
             <Button variant="ghost" size="sm" asChild>
               <Link href="https://app.rentaflow.es/login">Iniciar Sesión</Link>
             </Button>
-            <Button size="sm" asChild>
-              <Link href="#contacto">Reservar Demo</Link>
+            <Button size="sm" onClick={openDemoModal}>
+              Reservar Demo
             </Button>
           </div>
 
@@ -101,8 +103,8 @@ export function Navbar() {
                 <Button variant="outline" size="sm" asChild>
                   <Link href="https://app.rentaflow.es/login">Iniciar Sesión</Link>
                 </Button>
-                <Button size="sm" asChild>
-                  <Link href="#contacto">Reservar Demo</Link>
+                <Button size="sm" onClick={() => { setIsMobileMenuOpen(false); openDemoModal(); }}>
+                  Reservar Demo
                 </Button>
               </div>
             </div>

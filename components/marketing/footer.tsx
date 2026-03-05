@@ -2,9 +2,9 @@ import Link from "next/link"
 
 const footerLinks = {
   producto: [
-    { label: "Características", href: "#beneficios" },
-    { label: "Precios", href: "#precios" },
-    { label: "Cómo Funciona", href: "#como-funciona" },
+    { label: "Características", href: "/#beneficios" },
+    { label: "Precios", href: "/#precios" },
+    { label: "Cómo Funciona", href: "/#como-funciona" },
   ],
   legal: [
     { label: "Privacidad", href: "/privacidad" },

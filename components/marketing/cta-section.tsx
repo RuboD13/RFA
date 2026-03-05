@@ -1,8 +1,13 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
+import { useDemoModal } from "./demo-modal-context"
 
 export function CTASection() {
+  const { openDemoModal } = useDemoModal()
+
   return (
     <section id="contacto" className="py-16 lg:py-24 bg-primary">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -25,11 +30,9 @@ export function CTASection() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-          <Button size="lg" variant="secondary" className="text-base px-8" asChild>
-            <Link href="mailto:demo@rentaflow.com">
-              Reservar Demo Gratuita
-              <ArrowRight className="ml-2 w-4 h-4" />
-            </Link>
+          <Button size="lg" variant="secondary" className="text-base px-8" onClick={openDemoModal}>
+            Reservar Demo Gratuita
+            <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
           <Button
             size="lg"
