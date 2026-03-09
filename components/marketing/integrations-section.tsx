@@ -59,6 +59,7 @@ export function IntegrationsSection() {
 
                   <div className="space-y-4 max-w-md mx-auto">
                     <h3 className="text-2xl md:text-3xl font-bold text-black leading-tight">
+                      Optimizado para idealista/tools <br/>
                       Te posiciona automáticamente entre las mejores agencias
                     </h3>
                     <p className="text-black/70 font-medium text-lg">

@@ -1,6 +1,9 @@
+"use client"
+
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { MessageSquare, UserCheck, CalendarCheck, Bell, FileSignature } from "lucide-react"
+import { trackEvent, useTrackedHref } from "@/lib/tracking"
 
 type Step = {
   id: string
@@ -61,6 +64,12 @@ const steps: Step[] = [
 ]
 
 export function HowItWorks() {
+  const sampleDemoHref = useTrackedHref("/demo?sampleLead=true")
+
+  const handleSampleDemoClick = () => {
+    trackEvent("cta_demo_sample")
+  }
+
   return (
     <section id="como-funciona" className="py-16 lg:py-24 bg-secondary/30">
       <div id="how-it-works" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -112,7 +121,9 @@ export function HowItWorks() {
 
         <div className="mt-10 flex justify-center">
           <Button asChild>
-            <Link href="/signup?seedLead=true">Probar con un lead de ejemplo</Link>
+            <Link href={sampleDemoHref} onClick={handleSampleDemoClick}>
+              Probar con un lead de ejemplo
+            </Link>
           </Button>
         </div>
       </div>

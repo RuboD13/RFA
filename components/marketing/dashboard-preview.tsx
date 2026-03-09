@@ -915,7 +915,7 @@ export function DashboardPreview({ hideHeader = false }: { hideHeader?: boolean 
             </div>
             <div className="flex-1 flex justify-center">
               <div className="px-4 py-1 bg-background rounded text-xs text-muted-foreground">
-                app.rentaflow.com/dashboard
+                app.rentaflow.es/dashboard
               </div>
             </div>
           </div>

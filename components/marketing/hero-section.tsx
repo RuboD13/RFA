@@ -3,11 +3,21 @@
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowRight, CheckCircle2, Star, Zap } from "lucide-react"
-import { AutomationVisual } from "./automation-visual"
 import { useDemoModal } from "./demo-modal-context"
+import { trackEvent, useTrackedHref } from "@/lib/tracking"
 
 export function HeroSection() {
   const { openDemoModal } = useDemoModal()
+  const demoHref = useTrackedHref("/demo")
+
+  const handleBookDemoClick = () => {
+    trackEvent("cta_hero_book")
+    openDemoModal()
+  }
+
+  const handleOpenInteractiveDemo = () => {
+    trackEvent("cta_hero_demo")
+  }
 
   return (
     <section className="relative pt-24 pb-32 overflow-hidden bg-background">
@@ -45,13 +55,13 @@ export function HeroSection() {
           <Button
             size="lg"
             className="h-12 px-8 text-base rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/30 transition-all"
-            onClick={openDemoModal}
+            onClick={handleBookDemoClick}
           >
             Reservar Demo
             <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
           <Button size="lg" variant="outline" className="h-12 px-8 text-base rounded-full bg-background/50 backdrop-blur-sm hover:bg-secondary/50 transition-all" asChild>
-            <Link href="#demo">
+            <Link href={demoHref} onClick={handleOpenInteractiveDemo}>
               <Zap className="mr-2 w-4 h-4 text-yellow-500" />
               Ver Demo Interactiva
             </Link>
@@ -69,7 +79,7 @@ export function HeroSection() {
               ))}
             </div>
             <div className="text-left leading-tight">
-              <span className="block font-bold text-foreground">+500 Agencias</span>
+              <span className="block font-bold text-foreground">+50 Agencias en España</span>
               <span className="text-xs">Confían en nosotros</span>
             </div>
           </div>
@@ -87,11 +97,6 @@ export function HeroSection() {
             <CheckCircle2 className="w-4 h-4 text-success" />
             <span>RGPD Compliant</span>
           </div>
-        </div>
-
-        {/* Automation Visual Pipeline */}
-        <div className="relative w-full max-w-6xl mx-auto perspective-1000 animate-in fade-in zoom-in-95 duration-1000 delay-500">
-          <AutomationVisual />
         </div>
 
       </div>

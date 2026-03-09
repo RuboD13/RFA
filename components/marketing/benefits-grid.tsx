@@ -5,8 +5,8 @@ const benefits = [
     icon: Clock,
     title: "Ahorra Horas Cada Día",
     description:
-      "Automatiza respuestas a leads, recordatorios y seguimientos. Dedica tu tiempo a cerrar operaciones, no a emails.",
-    highlight: "00:49h ahorradas por anuncio",
+      "Automatiza respuestas a leads, recordatorios y seguimientos. Dedica tu tiempo a cerrar operaciones, no más emails.",
+    highlight: "49 minutos ahorrados por anuncio al día",
   },
   {
     icon: Database,
@@ -19,7 +19,7 @@ const benefits = [
     icon: MessageSquare,
     title: "Solicitud Automática de Datos",
     description:
-      "El sistema solicita DNI, justificantes de ingresos y documentación a cada candidato. Tú solo validas.",
+      "El sistema solicita datos personales, DNI, cantidad de ingresos y documentación a cada candidato. Tú solo validas.",
     highlight: "Verificación humana final",
   },
   {
@@ -27,20 +27,20 @@ const benefits = [
     title: "Gestión de Visitas Sin Esfuerzo",
     description:
       "Programa, reprograma y cancela visitas. Sincronización con tu calendario y notificaciones automáticas.",
-    highlight: "Cero llamadas perdidas",
+    highlight: "Cero llamadas sin contestar",
   },
   {
     icon: BarChart3,
     title: "Métricas en Tiempo Real",
     description:
       "Conversión, leads por día, tiempo ahorrado, análisis de calidad. Todo para tomar decisiones informadas.",
-    highlight: "34.5% tasa de conversión",
+    highlight: "Los datos que necesitas para tomar decisiones",
   },
   {
     icon: FileCheck,
     title: "Análisis de Requisitos de Aval",
     description: "Calcula automáticamente si el inquilino necesita aval según ingresos vs precio del alquiler.",
-    highlight: "Tasa de esfuerzo calculada",
+    highlight: "Tasa de esfuerzo clara y disponible continuamente",
   },
 ]
 

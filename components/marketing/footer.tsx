@@ -1,4 +1,9 @@
+"use client"
+
 import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { useDemoModal } from "./demo-modal-context"
+import { trackEvent } from "@/lib/tracking"
 
 const footerLinks = {
   producto: [
@@ -14,6 +19,13 @@ const footerLinks = {
 }
 
 export function Footer() {
+  const { openDemoModal } = useDemoModal()
+
+  const handleFooterBooking = () => {
+    trackEvent("cta_footer_book")
+    openDemoModal()
+  }
+
   return (
     <footer className="bg-foreground text-background py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -38,6 +50,9 @@ export function Footer() {
             <p className="text-sm text-background/70">
               Automatiza tu gestión de alquileres. De lead a contrato sin esfuerzo.
             </p>
+            <Button variant="secondary" size="sm" className="mt-4" onClick={handleFooterBooking}>
+              Reservar Demo
+            </Button>
           </div>
 
           {/* Links */}

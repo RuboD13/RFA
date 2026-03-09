@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button"
 import { X, ArrowRight, CheckCircle2 } from "lucide-react"
 import { useDemoModal } from "./demo-modal-context"
 import { cn } from "@/lib/utils"
+import { getAttributionForPayload } from "@/lib/tracking"
 
 export function DemoModal() {
   const { isOpen, closeDemoModal } = useDemoModal()
@@ -53,6 +54,7 @@ export function DemoModal() {
   }, [isOpen, closeDemoModal])
 
   const mailtoHref = useMemo(() => {
+    const attribution = getAttributionForPayload()
     const subject = "Reserva de demo - RentAFlow"
     const lines = [
       `Nombre: ${demoForm.name}`,
@@ -62,10 +64,17 @@ export function DemoModal() {
       `¿Usas idealista tools?: ${demoForm.usesIdealistaTools || "-"}`,
       `Volumen semanal de leads/inquilinos (agencia inmobiliaria): ${demoForm.weeklyLeadVolume || "-"}`,
       `¿Usáis CRM?: ${demoForm.usesCrm || "-"}`,
+      "",
+      `UTM Source: ${attribution.utm_source || "-"}`,
+      `UTM Medium: ${attribution.utm_medium || "-"}`,
+      `UTM Campaign: ${attribution.utm_campaign || "-"}`,
+      `UTM Content: ${attribution.utm_content || "-"}`,
+      `UTM Term: ${attribution.utm_term || "-"}`,
+      `Referrer: ${attribution.referrer || "-"}`,
     ]
 
     const body = lines.join("\n")
-    return `mailto:demo@rentaflow.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    return `mailto:demo@rentaflow.es?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
   }, [demoForm])
 
   const handleNextStep = (e: React.FormEvent) => {

@@ -6,7 +6,7 @@ const testimonials = [
       "RentAFlow nos ha permitido gestionar el triple de leads con el mismo equipo. La IA responde en segundos y los inquilinos llegan ya filtrados.",
     author: "Laura Martínez",
     role: "Directora de Operaciones",
-    company: "Inmobiliaria Sol",
+    company: "Inmobiliaria SolyMar",
     rating: 5,
     avatar: "LM",
   },
@@ -21,7 +21,7 @@ const testimonials = [
   },
   {
     quote:
-      "La gestión de documentos era un caos. Con RentAFlow tenemos todo centralizado, cifrado y listo para firmar. Cumplimos RGPD sin esfuerzo.",
+      "La gestión de tantos perfiles solicitantes era un caos y nos ocupaba muchas horas de varias personas. Con RentAFlow tenemos todo centralizado, cifrado y listo para firmar. Cumplimos RGPD sin esfuerzo.",
     author: "Ana López",
     role: "CEO",
     company: "AlquilaYa",
@@ -40,7 +40,7 @@ export function Testimonials() {
             Lo que dicen nuestros <span className="text-primary">clientes</span>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground text-pretty">
-            Más de 500 agencias ya confían en RentAFlow para automatizar su gestión de alquileres.
+            Más de 50 agencias en toda España ya confían en RentAFlow para automatizar su gestión de alquileres.-
           </p>
         </div>
 

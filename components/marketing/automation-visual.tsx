@@ -23,16 +23,15 @@ export function AutomationVisual() {
   }, [])
 
   const orderedLeads = [
-    { name: "Lucía P.", property: "Ascao 55", status: "Contestado", tone: "emerald" },
-    { name: "Javier M.", property: "Río Corrientes", status: "Aval", tone: "indigo" },
-    { name: "Nuria G.", property: "Pereda 5", status: "Docs", tone: "amber" },
-    { name: "Carlos T.", property: "José María 2", status: "Visita", tone: "blue" },
+    { name: "Lina Montoro", property: "Ascao 55", status: "Aprobado", tone: "emerald" },
+    { name: "Samuel Varela", property: "Río Corrientes", status: "Descartado", tone: "slate" },
+    { name: "Nadia Pardo", property: "Río Corrientes", status: "Incompleto", tone: "amber" },
+    { name: "Mario Castañeda", property: "Pereda 2", status: "Datos Compl.", tone: "blue" },
   ]
 
   return (
     <div className="relative w-full max-w-6xl mx-auto p-4 sm:p-8 min-h-[420px] flex items-center justify-center">
       <div className="absolute inset-0 bg-background/60 backdrop-blur-xl border border-border/50 rounded-3xl shadow-2xl overflow-hidden" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px]" />
 
       <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-[1.1fr_2fr_1.4fr] gap-8 lg:gap-12 items-center">
         <div className="relative h-[240px]">
@@ -41,10 +40,10 @@ export function AutomationVisual() {
               <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-orange-500/10 text-orange-500">
                 <Globe className="h-4 w-4" />
               </span>
-              Idealista
+              {orderedLeads[0].name}
             </div>
-            <div className="mt-2 h-2 w-24 rounded bg-muted/70" />
-            <div className="mt-1 h-2 w-16 rounded bg-muted/50" />
+            <div className="mt-1 text-[10px] text-muted-foreground">{orderedLeads[0].property}</div>
+            <div className="mt-2 h-2 w-16 rounded bg-muted/50" />
             <div className="mt-1 h-2 w-20 rounded bg-muted/40" />
           </div>
           <div className="absolute left-20 top-16 w-40 rounded-xl border border-border bg-card/80 p-3 shadow-sm lead-intake lead-intake-2">
@@ -52,10 +51,10 @@ export function AutomationVisual() {
               <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-orange-500/10 text-orange-500">
                 <Globe className="h-4 w-4" />
               </span>
-              Idealista
+              {orderedLeads[1].name}
             </div>
-            <div className="mt-2 h-2 w-20 rounded bg-muted/60" />
-            <div className="mt-1 h-2 w-12 rounded bg-muted/40" />
+            <div className="mt-1 text-[10px] text-muted-foreground">{orderedLeads[1].property}</div>
+            <div className="mt-2 h-2 w-12 rounded bg-muted/40" />
             <div className="mt-1 h-2 w-24 rounded bg-muted/30" />
           </div>
           <div className="absolute left-6 bottom-10 w-40 rounded-xl border border-border bg-card/80 p-3 shadow-sm lead-intake lead-intake-3">
@@ -63,10 +62,10 @@ export function AutomationVisual() {
               <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-orange-500/10 text-orange-500">
                 <Globe className="h-4 w-4" />
               </span>
-              Idealista
+              {orderedLeads[2].name}
             </div>
-            <div className="mt-2 h-2 w-16 rounded bg-muted/50" />
-            <div className="mt-1 h-2 w-20 rounded bg-muted/40" />
+            <div className="mt-1 text-[10px] text-muted-foreground">{orderedLeads[2].property}</div>
+            <div className="mt-2 h-2 w-20 rounded bg-muted/40" />
             <div className="mt-1 h-2 w-14 rounded bg-muted/30" />
           </div>
           <div className="absolute right-2 bottom-8 w-36 rounded-xl border border-border bg-card/70 p-3 shadow-sm opacity-70 lead-intake lead-intake-4">
@@ -74,10 +73,10 @@ export function AutomationVisual() {
               <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-orange-500/10 text-orange-500">
                 <Globe className="h-4 w-4" />
               </span>
-              Lead sin datos
+              {orderedLeads[3].name}
             </div>
-            <div className="mt-2 h-2 w-20 rounded bg-muted/40" />
-            <div className="mt-1 h-2 w-10 rounded bg-muted/30" />
+            <div className="mt-1 text-[10px] text-muted-foreground">{orderedLeads[3].property}</div>
+            <div className="mt-2 h-2 w-10 rounded bg-muted/30" />
           </div>
           <div className="absolute left-6 -bottom-2 text-xs uppercase tracking-wider text-muted-foreground">
             Leads desordenados
@@ -150,7 +149,7 @@ export function AutomationVisual() {
                 key={lead.name}
                 className={`lead-grid-card lead-grid-card-${index} rounded-xl border bg-card px-3 py-3 shadow-sm transition-all ${activeStep >= 2 ? "opacity-100" : "opacity-60"} ${
                   lead.tone === "emerald" ? "border-emerald-500/30" : ""
-                } ${lead.tone === "indigo" ? "border-indigo-500/30" : ""} ${lead.tone === "amber" ? "border-amber-500/30" : ""} ${
+                } ${lead.tone === "slate" ? "border-slate-500/30" : ""} ${lead.tone === "amber" ? "border-amber-500/30" : ""} ${
                   lead.tone === "blue" ? "border-blue-500/30" : ""
                 }`}
               >
@@ -158,10 +157,10 @@ export function AutomationVisual() {
                   <span className="font-medium text-foreground">{lead.name}</span>
                   <span
                     className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${
-                      lead.tone === "emerald" ? "bg-emerald-500/10 text-emerald-500" : ""
-                    } ${lead.tone === "indigo" ? "bg-indigo-500/10 text-indigo-500" : ""} ${
-                      lead.tone === "amber" ? "bg-amber-500/10 text-amber-500" : ""
-                    } ${lead.tone === "blue" ? "bg-blue-500/10 text-blue-500" : ""}`}
+                    lead.tone === "emerald" ? "bg-emerald-500/10 text-emerald-500" : ""
+                  } ${lead.tone === "slate" ? "bg-slate-500/10 text-slate-500" : ""} ${
+                    lead.tone === "amber" ? "bg-amber-500/10 text-amber-500" : ""
+                  } ${lead.tone === "blue" ? "bg-blue-500/10 text-blue-500" : ""}`}
                   >
                     {lead.status}
                   </span>
