@@ -5,7 +5,6 @@ import Link from "next/link"
 import { ArrowLeft, ArrowRight, PlayCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useDemoModal } from "@/components/marketing/demo-modal-context"
-import { trackEvent, useTrackedHref } from "@/lib/tracking"
 import { AutomationVisual } from "@/components/marketing/automation-visual"
 
 const DashboardPreview = dynamic(
@@ -27,10 +26,8 @@ const DashboardPreview = dynamic(
 
 export default function DemoPage() {
   const { openDemoModal } = useDemoModal()
-  const trackedLoginHref = useTrackedHref("https://app.rentaflow.es/login")
 
   const openBooking = () => {
-    trackEvent("cta_hero_book", { source: "demo_page" })
     openDemoModal()
   }
 
@@ -48,7 +45,7 @@ export default function DemoPage() {
             </Link>
           </Button>
           <Button variant="outline" asChild>
-            <Link href={trackedLoginHref}>Iniciar Sesión</Link>
+            <Link href="https://app.rentaflow.es/login">Iniciar Sesión</Link>
           </Button>
         </div>
       </section>
@@ -65,10 +62,10 @@ export default function DemoPage() {
               Demo guiada de producto
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold text-foreground text-balance">
-              Mira cómo RentAFlow convierte leads en contratos
+              Así se gestiona un lead de alquiler dentro de RentAFlow
             </h1>
             <p className="mt-4 text-lg text-muted-foreground text-pretty">
-              Esta demo está preparada para simular un flujo real de agencia inmobiliaria, de captación a validación.
+              Recorre una versión demo del panel y descubre cómo una agencia captura, clasifica, revisa y avanza candidatos desde un flujo centralizado.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row justify-center gap-4">
               <Button size="lg" onClick={openBooking}>
@@ -76,7 +73,7 @@ export default function DemoPage() {
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
               <Button size="lg" variant="outline" asChild>
-                <Link href="#walkthrough">Ver walkthrough estático</Link>
+                <Link href="#walkthrough">Entrar en la demo</Link>
               </Button>
             </div>
           </div>
@@ -87,16 +84,16 @@ export default function DemoPage() {
             <h2 className="text-2xl font-semibold text-foreground">Walkthrough rápido</h2>
             <div className="mt-6 grid gap-4 md:grid-cols-3">
               <div className="rounded-xl border border-border p-4">
-                <p className="text-sm font-semibold text-foreground">1. Captura automática</p>
-                <p className="text-sm text-muted-foreground mt-2">RentAFlow detecta leads entrantes desde portales y correo.</p>
+                <p className="text-sm font-semibold text-foreground">1. Entrada y clasificación</p>
+                <p className="text-sm text-muted-foreground mt-2">Los leads se capturan desde portales y se ordenan en el flujo.</p>
               </div>
               <div className="rounded-xl border border-border p-4">
-                <p className="text-sm font-semibold text-foreground">2. Cualificación inteligente</p>
-                <p className="text-sm text-muted-foreground mt-2">Solicita documentación y calcula encaje del candidato.</p>
+                <p className="text-sm font-semibold text-foreground">2. Revisión del candidato</p>
+                <p className="text-sm text-muted-foreground mt-2">Consulta estado, documentación, notas y comunicaciones desde la ficha.</p>
               </div>
               <div className="rounded-xl border border-border p-4">
-                <p className="text-sm font-semibold text-foreground">3. Acción comercial</p>
-                <p className="text-sm text-muted-foreground mt-2">Agenda visitas y deja todo listo para la firma del contrato.</p>
+                <p className="text-sm font-semibold text-foreground">3. Decisión y siguiente paso</p>
+                <p className="text-sm text-muted-foreground mt-2">Aprueba, solicita información adicional o programa visita desde el panel.</p>
               </div>
             </div>
           </section>

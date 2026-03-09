@@ -5,7 +5,6 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { useDemoModal } from "./demo-modal-context"
-import { trackEvent, useTrackedHref } from "@/lib/tracking"
 
 const navLinks = [
   { href: "#como-funciona", label: "Cómo Funciona" },
@@ -17,14 +16,8 @@ const navLinks = [
 
 export function Navbar() {
   const { openDemoModal } = useDemoModal()
-  const loginHref = useTrackedHref("https://app.rentaflow.es/login")
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-
-  const handleBookDemoClick = () => {
-    trackEvent("cta_hero_book", { source: "navbar" })
-    openDemoModal()
-  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -75,9 +68,9 @@ export function Navbar() {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center gap-3">
             <Button variant="ghost" size="sm" asChild>
-              <Link href={loginHref}>Iniciar Sesión</Link>
+              <Link href="https://app.rentaflow.es/login">Iniciar Sesión</Link>
             </Button>
-            <Button size="sm" onClick={handleBookDemoClick}>
+            <Button size="sm" onClick={openDemoModal}>
               Reservar Demo
             </Button>
           </div>
@@ -108,15 +101,9 @@ export function Navbar() {
               ))}
               <div className="flex flex-col gap-2 px-4 pt-4 border-t border-border">
                 <Button variant="outline" size="sm" asChild>
-                  <Link href={loginHref}>Iniciar Sesión</Link>
+                  <Link href="https://app.rentaflow.es/login">Iniciar Sesión</Link>
                 </Button>
-                <Button
-                  size="sm"
-                  onClick={() => {
-                    setIsMobileMenuOpen(false)
-                    handleBookDemoClick()
-                  }}
-                >
+                <Button size="sm" onClick={() => { setIsMobileMenuOpen(false); openDemoModal(); }}>
                   Reservar Demo
                 </Button>
               </div>

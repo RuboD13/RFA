@@ -32,6 +32,7 @@ export function AutomationVisual() {
   return (
     <div className="relative w-full max-w-6xl mx-auto p-4 sm:p-8 min-h-[420px] flex items-center justify-center">
       <div className="absolute inset-0 bg-background/60 backdrop-blur-xl border border-border/50 rounded-3xl shadow-2xl overflow-hidden" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px]" />
 
       <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-[1.1fr_2fr_1.4fr] gap-8 lg:gap-12 items-center">
         <div className="relative h-[240px]">
@@ -40,10 +41,10 @@ export function AutomationVisual() {
               <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-orange-500/10 text-orange-500">
                 <Globe className="h-4 w-4" />
               </span>
-              {orderedLeads[0].name}
+              Idealista
             </div>
-            <div className="mt-1 text-[10px] text-muted-foreground">{orderedLeads[0].property}</div>
-            <div className="mt-2 h-2 w-16 rounded bg-muted/50" />
+            <div className="mt-2 h-2 w-24 rounded bg-muted/70" />
+            <div className="mt-1 h-2 w-16 rounded bg-muted/50" />
             <div className="mt-1 h-2 w-20 rounded bg-muted/40" />
           </div>
           <div className="absolute left-20 top-16 w-40 rounded-xl border border-border bg-card/80 p-3 shadow-sm lead-intake lead-intake-2">
@@ -51,10 +52,10 @@ export function AutomationVisual() {
               <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-orange-500/10 text-orange-500">
                 <Globe className="h-4 w-4" />
               </span>
-              {orderedLeads[1].name}
+              Idealista
             </div>
-            <div className="mt-1 text-[10px] text-muted-foreground">{orderedLeads[1].property}</div>
-            <div className="mt-2 h-2 w-12 rounded bg-muted/40" />
+            <div className="mt-2 h-2 w-20 rounded bg-muted/60" />
+            <div className="mt-1 h-2 w-12 rounded bg-muted/40" />
             <div className="mt-1 h-2 w-24 rounded bg-muted/30" />
           </div>
           <div className="absolute left-6 bottom-10 w-40 rounded-xl border border-border bg-card/80 p-3 shadow-sm lead-intake lead-intake-3">
@@ -62,10 +63,10 @@ export function AutomationVisual() {
               <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-orange-500/10 text-orange-500">
                 <Globe className="h-4 w-4" />
               </span>
-              {orderedLeads[2].name}
+              Idealista
             </div>
-            <div className="mt-1 text-[10px] text-muted-foreground">{orderedLeads[2].property}</div>
-            <div className="mt-2 h-2 w-20 rounded bg-muted/40" />
+            <div className="mt-2 h-2 w-16 rounded bg-muted/50" />
+            <div className="mt-1 h-2 w-20 rounded bg-muted/40" />
             <div className="mt-1 h-2 w-14 rounded bg-muted/30" />
           </div>
           <div className="absolute right-2 bottom-8 w-36 rounded-xl border border-border bg-card/70 p-3 shadow-sm opacity-70 lead-intake lead-intake-4">
@@ -73,10 +74,10 @@ export function AutomationVisual() {
               <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-orange-500/10 text-orange-500">
                 <Globe className="h-4 w-4" />
               </span>
-              {orderedLeads[3].name}
+              Lead sin datos
             </div>
-            <div className="mt-1 text-[10px] text-muted-foreground">{orderedLeads[3].property}</div>
-            <div className="mt-2 h-2 w-10 rounded bg-muted/30" />
+            <div className="mt-2 h-2 w-20 rounded bg-muted/40" />
+            <div className="mt-1 h-2 w-10 rounded bg-muted/30" />
           </div>
           <div className="absolute left-6 -bottom-2 text-xs uppercase tracking-wider text-muted-foreground">
             Leads desordenados
@@ -157,10 +158,10 @@ export function AutomationVisual() {
                   <span className="font-medium text-foreground">{lead.name}</span>
                   <span
                     className={`rounded-full px-2 py-0.5 text-[10px] font-medium ${
-                    lead.tone === "emerald" ? "bg-emerald-500/10 text-emerald-500" : ""
-                  } ${lead.tone === "slate" ? "bg-slate-500/10 text-slate-500" : ""} ${
-                    lead.tone === "amber" ? "bg-amber-500/10 text-amber-500" : ""
-                  } ${lead.tone === "blue" ? "bg-blue-500/10 text-blue-500" : ""}`}
+                      lead.tone === "emerald" ? "bg-emerald-500/10 text-emerald-500" : ""
+                    } ${lead.tone === "slate" ? "bg-slate-500/10 text-slate-500" : ""} ${
+                      lead.tone === "amber" ? "bg-amber-500/10 text-amber-500" : ""
+                    } ${lead.tone === "blue" ? "bg-blue-500/10 text-blue-500" : ""}`}
                   >
                     {lead.status}
                   </span>
@@ -196,26 +197,33 @@ export function AutomationVisual() {
           position: absolute;
           top: 50%;
           left: 6%;
-          width: 10px;
-          height: 10px;
-          border-radius: 999px;
-          background: rgba(59, 130, 246, 0.35);
+          width: 12px;
+          height: 12px;
+          background: hsl(var(--muted));
+          border-radius: 50%;
           transform: translateY(-50%);
-          box-shadow: 0 0 0 6px rgba(59, 130, 246, 0.08);
+          opacity: 0.3;
+          animation: belt 3s linear infinite;
         }
-        .belt-dot-1 { animation: belt 2.2s linear infinite; }
-        .belt-dot-2 { animation: belt 2.2s linear infinite 0.7s; }
-        .belt-dot-3 { animation: belt 2.2s linear infinite 1.4s; }
-        .lead-intake { animation: lead-intake 5.2s ease-in-out infinite; }
-        .lead-intake-1 { --lead-rot: -8deg; animation-delay: 0.1s; }
-        .lead-intake-2 { --lead-rot: 6deg; animation-delay: 0.8s; }
-        .lead-intake-3 { --lead-rot: -2deg; animation-delay: 1.4s; }
-        .lead-intake-4 { --lead-rot: 10deg; animation-delay: 2s; }
-        .lead-grid-card { animation: lead-place 4.2s ease-in-out infinite; }
-        .lead-grid-card-0 { animation-delay: 0.1s; }
-        .lead-grid-card-1 { animation-delay: 0.6s; }
-        .lead-grid-card-2 { animation-delay: 1.1s; }
-        .lead-grid-card-3 { animation-delay: 1.6s; }
+        .belt-dot-1 { animation-delay: 0s; }
+        .belt-dot-2 { animation-delay: 1s; }
+        .belt-dot-3 { animation-delay: 2s; }
+
+        .lead-intake {
+          animation: lead-intake 6s ease-in-out infinite;
+        }
+        .lead-intake-1 { animation-delay: 0s; --lead-rot: 2deg; }
+        .lead-intake-2 { animation-delay: 1.5s; --lead-rot: -1deg; }
+        .lead-intake-3 { animation-delay: 3s; --lead-rot: 3deg; }
+        .lead-intake-4 { animation-delay: 4.5s; --lead-rot: -2deg; }
+
+        .lead-grid-card {
+          animation: lead-place 6s ease-out infinite;
+        }
+        .lead-grid-card-0 { animation-delay: 0.8s; }
+        .lead-grid-card-1 { animation-delay: 2.3s; }
+        .lead-grid-card-2 { animation-delay: 3.8s; }
+        .lead-grid-card-3 { animation-delay: 5.3s; }
       `}</style>
     </div>
   )

@@ -1,8 +1,9 @@
 import { Navbar } from "@/components/marketing/navbar"
 import { HeroSection } from "@/components/marketing/hero-section"
 import { PartnersSection } from "@/components/marketing/partners-section"
-import { IntegrationsSection } from "@/components/marketing/integrations-section"
+import { OperationalContext } from "@/components/marketing/operational-context"
 import { BenefitsGrid } from "@/components/marketing/benefits-grid"
+import { IntegrationsSection } from "@/components/marketing/integrations-section"
 import { HowItWorks } from "@/components/marketing/how-it-works"
 import { DashboardPreview } from "@/components/marketing/dashboard-preview"
 import { PricingCards } from "@/components/marketing/pricing-cards"
@@ -17,6 +18,7 @@ export default function HomePage() {
       <Navbar />
       <HeroSection />
       <PartnersSection />
+      <OperationalContext />
       <BenefitsGrid />
       <IntegrationsSection />
       <HowItWorks />

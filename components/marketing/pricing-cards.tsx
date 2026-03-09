@@ -3,8 +3,8 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Check } from "lucide-react"
+import Link from "next/link"
 import { useDemoModal } from "./demo-modal-context"
-import { trackEvent } from "@/lib/tracking"
 
 const plans = [
   {
@@ -76,11 +76,6 @@ const plans = [
 export function PricingCards() {
   const { openDemoModal } = useDemoModal()
 
-  const handlePlanSelection = (planName: string) => {
-    trackEvent("cta_pricing_select", { plan: planName })
-    openDemoModal()
-  }
-
   return (
     <section id="precios" className="py-16 lg:py-24 bg-secondary/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -135,11 +130,7 @@ export function PricingCards() {
               </ul>
 
               {/* CTA */}
-              <Button
-                variant={plan.popular ? "default" : "outline"}
-                className="w-full"
-                onClick={() => handlePlanSelection(plan.name)}
-              >
+              <Button variant={plan.popular ? "default" : "outline"} className="w-full" onClick={openDemoModal}>
                 {plan.cta}
               </Button>
             </div>

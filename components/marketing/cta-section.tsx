@@ -4,16 +4,9 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { ArrowRight, CheckCircle2 } from "lucide-react"
 import { useDemoModal } from "./demo-modal-context"
-import { trackEvent, useTrackedHref } from "@/lib/tracking"
 
 export function CTASection() {
   const { openDemoModal } = useDemoModal()
-  const demoHref = useTrackedHref("/demo")
-
-  const handleBookDemoClick = () => {
-    trackEvent("cta_hero_book", { source: "cta_section" })
-    openDemoModal()
-  }
 
   return (
     <section id="contacto" className="py-16 lg:py-24 bg-primary">
@@ -37,7 +30,7 @@ export function CTASection() {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-          <Button size="lg" variant="secondary" className="text-base px-8" onClick={handleBookDemoClick}>
+          <Button size="lg" variant="secondary" className="text-base px-8" onClick={openDemoModal}>
             Reservar Demo Gratuita
             <ArrowRight className="ml-2 w-4 h-4" />
           </Button>
@@ -47,7 +40,7 @@ export function CTASection() {
             className="text-base px-8 bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
             asChild
           >
-            <Link href={demoHref}>Ver Demo Interactiva</Link>
+            <Link href="#precios">Ver Planes y Precios</Link>
           </Button>
         </div>
       </div>
