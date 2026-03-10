@@ -17,7 +17,7 @@ export default function HomePage() {
     <main className="min-h-screen">
       <Navbar />
       <HeroSection />
-      <PartnersSection />
+      {/* <PartnersSection /> */}
       <OperationalContext />
       <BenefitsGrid />
       <IntegrationsSection />

@@ -41,10 +41,10 @@ export function FAQSection() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground text-balance">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground text-balance tracking-tight leading-[1.1]">
             Preguntas Frecuentes
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground text-pretty">
+          <p className="mt-4 text-lg text-muted-foreground text-pretty font-normal leading-relaxed">
             Todo lo que necesitas saber antes de empezar.
           </p>
         </div>
@@ -59,14 +59,14 @@ export function FAQSection() {
             >
               <AccordionTrigger 
                 id={`faq-trigger-${index}`}
-                className="text-left text-foreground hover:no-underline py-5"
+                className="text-left text-foreground hover:no-underline py-5 font-medium"
               >
                 {faq.question}
               </AccordionTrigger>
               <AccordionContent 
                 id={`faq-content-${index}`}
                 aria-labelledby={`faq-trigger-${index}`}
-                className="text-muted-foreground pb-5 leading-relaxed"
+                className="text-muted-foreground pb-5 leading-relaxed font-normal"
               >
                 {faq.answer}
               </AccordionContent>

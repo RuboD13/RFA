@@ -50,10 +50,10 @@ export function BenefitsGrid() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground text-balance">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground text-balance leading-[1.1]">
             Todo lo que necesitas para <span className="text-primary">escalar tu agencia</span>
           </h2>
-          <p className="mt-4 text-lg text-muted-foreground text-pretty">
+          <p className="mt-4 text-lg font-normal text-muted-foreground text-pretty leading-normal">
             Automatiza las tareas repetitivas y enfócate en lo que importa: cerrar contratos y hacer crecer tu negocio.
           </p>
         </div>
@@ -74,8 +74,8 @@ export function BenefitsGrid() {
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-semibold text-foreground mb-2">{benefit.title}</h3>
-                <p className="text-muted-foreground leading-relaxed mb-4">{benefit.description}</p>
+                <h3 className="text-xl font-medium text-foreground mb-2">{benefit.title}</h3>
+                <p className="text-muted-foreground leading-normal mb-4 font-normal">{benefit.description}</p>
 
                 {/* Highlight Badge */}
                 <div className="inline-flex items-center px-3 py-1 rounded-full bg-secondary text-sm font-medium text-foreground">
