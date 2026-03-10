@@ -24,23 +24,117 @@ export function OperationalContext() {
         {/* Bento Grid Layout */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           
-          {/* Item 1: Wide Card (Span 2 cols on md) */}
-          <div className="md:col-span-2 group relative overflow-hidden rounded-3xl bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-500">
+          {/* Item 1: WhatsApp (Wide Card - Span 2 cols) */}
+          <div className="md:col-span-2 group relative overflow-hidden rounded-3xl bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-500 flex flex-col">
             <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
-            <div className="relative p-8 h-full flex flex-col justify-between">
+            <div className="relative p-8 flex-1 flex flex-col">
+              <div className="mb-8">
+                <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-4 text-white">
+                  <svg role="img" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+                </div>
+                <h3 className="text-2xl font-semibold text-white mb-3 tracking-tight">WhatsApp en piloto automático</h3>
+                <p className="text-white/60 leading-relaxed text-pretty max-w-lg">
+                  Responde leads, pide datos, hace seguimiento y ayuda a coordinar visitas por WhatsApp, sin que tengas que escribir lo mismo una y otra vez.
+                </p>
+              </div>
+              
+              {/* Abstract UI Visual - Automated WhatsApp Conversations (Grid Layout for Wide Card) */}
+              <div className="mt-auto grid grid-cols-1 sm:grid-cols-3 gap-4">
+                
+                {/* Chat 1: Data Collection */}
+                <div className="bg-[#0b141a] rounded-xl border border-white/5 overflow-hidden">
+                  <div className="flex items-center gap-3 px-3 py-2 bg-[#202c33] border-b border-white/5">
+                    <div className="w-6 h-6 rounded-full bg-indigo-500 flex items-center justify-center text-[10px] font-bold text-white">LM</div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs font-medium text-white truncate">Lucía M.</p>
+                    </div>
+                    <span className="text-[10px] text-white/40">10:42</span>
+                  </div>
+                  <div className="p-3 space-y-2 bg-[url('https://static.whatsapp.net/rsrc.php/v3/yl/r/gi_DckOUM5a.png')] bg-opacity-5 h-full">
+                    <div className="flex justify-end">
+                       <div className="bg-[#005c4b] text-[#e9edef] text-[11px] px-2.5 py-1.5 rounded-lg rounded-tr-none max-w-[85%] shadow-sm">
+                         Hola Lucía, para agendar la visita necesito tu DNI e ingresos.
+                         <div className="flex justify-end items-center gap-0.5 mt-0.5">
+                           <span className="text-[9px] text-white/60">10:41</span>
+                           <svg viewBox="0 0 16 15" width="10" height="10" className="text-[#53bdeb]"><path fill="currentColor" d="M15.01 3.316l-.478-.372a.365.365 0 0 0-.51.063L8.666 9.879a.32.32 0 0 1-.484.033l-.358-.325a.319.319 0 0 0-.484.032l-.378.483a.418.418 0 0 0 .036.541l1.32 1.266c.143.14.361.125.484-.033l6.272-8.048a.366.366 0 0 0-.064-.512zm-4.1 0l-.478-.372a.365.365 0 0 0-.51.063L4.566 9.879a.32.32 0 0 1-.484.033L1.891 7.769a.366.366 0 0 0-.515.006l-.423.433a.364.364 0 0 0 .006.514l3.258 3.185c.143.14.361.125.484-.033l6.272-8.048a.365.365 0 0 0-.063-.51z"></path></svg>
+                         </div>
+                       </div>
+                    </div>
+                    <div className="flex justify-start">
+                       <div className="bg-[#202c33] text-[#e9edef] text-[11px] px-2.5 py-1.5 rounded-lg rounded-tl-none max-w-[85%] shadow-sm">
+                         Claro! Te los paso ahora.
+                         <span className="block text-[9px] text-white/40 text-right mt-0.5">10:42</span>
+                       </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Chat 2: Missing Doc */}
+                <div className="bg-[#0b141a] rounded-xl border border-white/5 overflow-hidden">
+                  <div className="flex items-center gap-3 px-3 py-2 bg-[#202c33] border-b border-white/5">
+                    <div className="w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center text-[10px] font-bold text-white">CR</div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs font-medium text-white truncate">Carlos R.</p>
+                    </div>
+                    <span className="text-[10px] text-white/40">11:15</span>
+                  </div>
+                  <div className="p-3 space-y-2 h-full">
+                    <div className="flex justify-end">
+                       <div className="bg-[#005c4b] text-[#e9edef] text-[11px] px-2.5 py-1.5 rounded-lg rounded-tr-none max-w-[90%] shadow-sm">
+                         Carlos, solo nos falta el avalista para completar tu perfil.
+                         <div className="flex justify-end items-center gap-0.5 mt-0.5">
+                           <span className="text-[9px] text-white/60">11:14</span>
+                           <svg viewBox="0 0 16 15" width="10" height="10" className="text-[#53bdeb]"><path fill="currentColor" d="M15.01 3.316l-.478-.372a.365.365 0 0 0-.51.063L8.666 9.879a.32.32 0 0 1-.484.033l-.358-.325a.319.319 0 0 0-.484.032l-.378.483a.418.418 0 0 0 .036.541l1.32 1.266c.143.14.361.125.484-.033l6.272-8.048a.366.366 0 0 0-.064-.512zm-4.1 0l-.478-.372a.365.365 0 0 0-.51.063L4.566 9.879a.32.32 0 0 1-.484.033L1.891 7.769a.366.366 0 0 0-.515.006l-.423.433a.364.364 0 0 0 .006.514l3.258 3.185c.143.14.361.125.484-.033l6.272-8.048a.365.365 0 0 0-.063-.51z"></path></svg>
+                         </div>
+                       </div>
+                    </div>
+                  </div>
+                </div>
+
+                 {/* Chat 3: Scheduling */}
+                 <div className="bg-[#0b141a] rounded-xl border border-white/5 overflow-hidden">
+                  <div className="flex items-center gap-3 px-3 py-2 bg-[#202c33] border-b border-white/5">
+                    <div className="w-6 h-6 rounded-full bg-amber-500 flex items-center justify-center text-[10px] font-bold text-white">AG</div>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-xs font-medium text-white truncate">Ana G.</p>
+                    </div>
+                    <span className="text-[10px] text-white/40">09:30</span>
+                  </div>
+                  <div className="p-3 space-y-2 h-full">
+                    <div className="flex justify-end">
+                       <div className="bg-[#005c4b] text-[#e9edef] text-[11px] px-2.5 py-1.5 rounded-lg rounded-tr-none max-w-[90%] shadow-sm">
+                         Hola Ana, tenemos hueco mañana a las 10:00 o 12:30. ¿Te va bien?
+                         <div className="flex justify-end items-center gap-0.5 mt-0.5">
+                           <span className="text-[9px] text-white/60">09:30</span>
+                           <svg viewBox="0 0 16 15" width="10" height="10" className="text-white/60"><path fill="currentColor" d="M15.01 3.316l-.478-.372a.365.365 0 0 0-.51.063L8.666 9.879a.32.32 0 0 1-.484.033l-.358-.325a.319.319 0 0 0-.484.032l-.378.483a.418.418 0 0 0 .036.541l1.32 1.266c.143.14.361.125.484-.033l6.272-8.048a.366.366 0 0 0-.064-.512zm-4.1 0l-.478-.372a.365.365 0 0 0-.51.063L4.566 9.879a.32.32 0 0 1-.484.033L1.891 7.769a.366.366 0 0 0-.515.006l-.423.433a.364.364 0 0 0 .006.514l3.258 3.185c.143.14.361.125.484-.033l6.272-8.048a.365.365 0 0 0-.063-.51z"></path></svg>
+                         </div>
+                       </div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          {/* Item 2: Todo en una sola ficha (Tall Card - Span 1 col) */}
+          <div className="md:row-span-2 group relative overflow-hidden rounded-3xl bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-500 flex flex-col">
+            <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+            
+            <div className="relative p-8 flex-1 flex flex-col">
               <div className="mb-8">
                 <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-4 text-white">
                   <FileText className="w-5 h-5" />
                 </div>
                 <h3 className="text-2xl font-semibold text-white mb-3 tracking-tight">Todo en una sola ficha</h3>
-                <p className="text-white/60 leading-relaxed text-pretty max-w-md">
+                <p className="text-white/60 leading-relaxed text-pretty">
                   Datos del interesado, inmueble, origen del lead y comunicaciones reunidos en un mismo lugar. Sin pestañas infinitas.
                 </p>
               </div>
               
               {/* Abstract UI Visual - File Card */}
-              <div className="relative w-full h-32 bg-black/40 rounded-t-xl border-t border-x border-white/10 overflow-hidden mask-linear-fade">
+              <div className="mt-auto relative w-full h-32 bg-black/40 rounded-t-xl border-t border-x border-white/10 overflow-hidden mask-linear-fade">
                 <div className="p-4 space-y-3 opacity-80">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-white/20" />
@@ -52,34 +146,6 @@ export function OperationalContext() {
                   <div className="h-2 w-full bg-white/5 rounded-full" />
                   <div className="h-2 w-3/4 bg-white/5 rounded-full" />
                 </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Item 2: Tall Card (Span 1 col) */}
-          <div className="md:row-span-2 group relative overflow-hidden rounded-3xl bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-500 flex flex-col">
-            <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            
-            <div className="relative p-8 flex-1 flex flex-col">
-              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-4 text-white">
-                <ListFilter className="w-5 h-5" />
-              </div>
-              <h3 className="text-2xl font-semibold text-white mb-3 tracking-tight">Documentación y estado</h3>
-              <p className="text-white/60 leading-relaxed text-pretty mb-8">
-                Consulta qué falta, qué está completo y en qué punto se encuentra cada candidato.
-              </p>
-              
-              {/* Abstract UI Visual - Checklist Status */}
-              <div className="mt-auto space-y-3 bg-black/20 p-4 rounded-xl border border-white/5">
-                {[1, 2, 3].map((i) => (
-                  <div key={i} className="flex items-center justify-between p-2 rounded-lg bg-white/5">
-                    <div className="flex items-center gap-2">
-                      <div className={`w-2 h-2 rounded-full ${i === 1 ? 'bg-green-500' : i === 2 ? 'bg-yellow-500' : 'bg-white/20'}`} />
-                      <div className="h-1.5 w-12 bg-white/10 rounded-full" />
-                    </div>
-                    <div className="h-1.5 w-8 bg-white/5 rounded-full" />
-                  </div>
-                ))}
               </div>
             </div>
           </div>
