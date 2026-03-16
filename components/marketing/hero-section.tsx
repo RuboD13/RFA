@@ -30,15 +30,15 @@ export function HeroSection() {
         
         {/* Hero Headline */}
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground text-balance max-w-5xl leading-[0.95] mb-6 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100">
-          Deja de perseguir leads de alquiler  <br className="hidden sm:block" />
+          Filtra automáticamente los leads de alquiler <br className="hidden sm:block" />
           <span className="bg-gradient-to-r from-primary via-primary/80 to-primary/50 bg-clip-text text-transparent">
-            de portales inmobiliarios
+            antes de enseñar el piso
           </span>
         </h1>
 
         {/* Subheadline */}
-        <p className="text-lg sm:text-xl font-normal text-muted-foreground max-w-2xl text-pretty mb-10 leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
-          RentAFlow captura cada lead, recopila la documentación necesaria, organiza el expediente y te deja lista la siguiente acción comercial desde un solo panel.
+        <p className="text-lg sm:text-xl font-normal text-muted-foreground max-w-3xl text-pretty mb-10 leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
+          RentAFlow responde a cada interesado, solicita y valida la documentación y agenda visitas por WhatsApp. Tú solo te centras en enseñar el piso a candidatos que realmente pueden alquilar.
         </p>
 
         {/* CTAs */}
@@ -53,14 +53,14 @@ export function HeroSection() {
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
             <Button size="lg" variant="outline" className="h-12 px-8 text-base font-medium rounded-full bg-background/50 backdrop-blur-sm hover:bg-secondary/50 transition-all" asChild>
-              <Link href="/demo">
+              <Link href="#demo">
                 <Zap className="mr-2 w-4 h-4 text-yellow-500" />
                 Ver cómo se trabaja
               </Link>
             </Button>
           </div>
-          <p className="mt-4 text-xs font-normal text-muted-foreground text-center max-w-md">
-            Explora una demo funcional con leads ficticios y recorre las vistas clave del producto.
+          <p className="mt-8 text-sm font-medium text-muted-foreground text-center max-w-md">
+            Más de 50 agencias ya automatizan la gestión de alquileres con RentAFlow
           </p>
         </div>
 

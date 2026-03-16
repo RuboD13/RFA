@@ -1,4 +1,4 @@
-import { FileText, ListFilter, MousePointerClick } from "lucide-react"
+import { FileText } from "lucide-react"
 
 export function OperationalContext() {
   return (
@@ -11,14 +11,129 @@ export function OperationalContext() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
         
-        {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16 lg:mb-24">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white text-balance tracking-tight mb-6 leading-[1.1]">
-            Toda la información de los posibles inquilinos listo para avanzar
-          </h2>
-          <p className="text-lg sm:text-xl font-normal text-white/60 text-pretty max-w-2xl mx-auto leading-relaxed">
-            RentAFlow captura la consulta, reúne la información clave y deja claro qué hacer después: revisar, pedir un dato, programar una visita o seguir avanzando.
-          </p>
+        <div className="max-w-6xl mx-auto mb-20 lg:mb-32">
+          {/* Section Header */}
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-sm font-medium text-white/70 mb-8 shadow-[0_0_15px_rgba(255,255,255,0.05)] backdrop-blur-sm">
+              <span className="relative flex h-2 w-2 mr-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-red-500"></span>
+              </span>
+              El problema de publicar en portales
+            </div>
+            
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white text-balance tracking-tight mb-6 leading-[1.05]">
+              Gestionar alquileres <br className="hidden sm:block" />
+              <span className="text-white/40">puede convertirse en un caos</span>
+            </h2>
+            
+            <p className="text-lg sm:text-xl text-white/60 max-w-2xl mx-auto leading-relaxed text-pretty">
+              Entran decenas de interesados, pero pocos llegan realmente listos para visitar y alquilar. El filtrado manual te roba horas cada día.
+            </p>
+          </div>
+
+          {/* Comparison Cards */}
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8 items-stretch">
+            
+            {/* Card: Before (Problem) */}
+            <div className="relative overflow-hidden rounded-3xl border border-white/5 bg-[#111111] p-8 sm:p-10 group transition-colors duration-500 hover:bg-[#151515]">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-red-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 group-hover:bg-red-500/10 transition-colors duration-500" />
+              
+              <div className="relative z-10">
+                <div className="flex items-center gap-3 mb-8">
+                  <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center border border-red-500/20">
+                    <svg className="w-5 h-5 text-red-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-xl font-medium text-white/90">El proceso tradicional</h3>
+                </div>
+
+                <ul className="space-y-5">
+                  {[
+                    "Decenas de leads sin datos cualificados",
+                    "Horas pidiendo documentación por email y teléfono",
+                    "Visitas con personas que no cumplen requisitos",
+                    "Mensajes y llamadas constantes interrumpiendo"
+                  ].map((item, i) => (
+                    <li key={i} className="flex items-start gap-4 text-white/60 leading-relaxed">
+                      <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-red-500/40 shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Card: After (Solution) */}
+            <div className="relative overflow-hidden rounded-3xl border border-emerald-500/20 bg-gradient-to-b from-emerald-500/[0.05] to-transparent p-8 sm:p-10 group transition-all duration-500 hover:border-emerald-500/40 hover:bg-emerald-500/[0.08]">
+              <div className="absolute inset-0 bg-emerald-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="absolute -top-24 -right-24 w-80 h-80 bg-emerald-500/20 rounded-full blur-3xl opacity-50 group-hover:opacity-80 transition-opacity duration-500" />
+              
+              <div className="relative z-10 h-full flex flex-col">
+                <div className="flex items-center gap-4 mb-8">
+                  <div className="w-12 h-12 rounded-2xl bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30 shadow-[0_0_20px_rgba(16,185,129,0.2)]">
+                    <svg className="w-6 h-6 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold text-white">Con RentAFlow</h3>
+                </div>
+
+                <div className="space-y-6 flex-1">
+                  {/* Feature 1 */}
+                  <div className="flex gap-4">
+                    <div className="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30">
+                      <svg className="w-3.5 h-3.5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="text-white font-semibold mb-1.5">Filtro en piloto automático</h4>
+                      <p className="text-white/70 text-sm leading-relaxed text-pretty">WhatsApp atiende a los leads, solicita documentación y descarta a los no cualificados.</p>
+                    </div>
+                  </div>
+                  
+                  {/* Feature 2 */}
+                  <div className="flex gap-4">
+                    <div className="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30">
+                      <svg className="w-3.5 h-3.5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="text-white font-semibold mb-1.5">Información centralizada</h4>
+                      <p className="text-white/70 text-sm leading-relaxed text-pretty">Llega a cada visita con el expediente completo y el scoring financiero ya calculado.</p>
+                    </div>
+                  </div>
+
+                  {/* Feature 3 */}
+                  <div className="flex gap-4">
+                    <div className="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center border border-emerald-500/30">
+                      <svg className="w-3.5 h-3.5 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h4 className="text-white font-semibold mb-1.5">Visitas 100% efectivas</h4>
+                      <p className="text-white/70 text-sm leading-relaxed text-pretty">Invierte tu tiempo solo en enseñar el piso a inquilinos viables y listos para cerrar.</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-emerald-500/20">
+                  <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 text-sm font-medium">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    Cierra más rápido, sin estrés
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
 
         {/* Bento Grid Layout */}
@@ -122,7 +237,7 @@ export function OperationalContext() {
           <div className="md:row-span-2 group relative overflow-hidden rounded-3xl bg-white/5 border border-white/10 hover:border-white/20 transition-all duration-500 flex flex-col">
             <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
-            <div className="relative p-8 flex-1 flex flex-col">
+            <div className="relative p-8 pb-0 flex-1 flex flex-col">
               <div className="mb-8">
                 <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-4 text-white">
                   <FileText className="w-5 h-5" />
@@ -133,18 +248,88 @@ export function OperationalContext() {
                 </p>
               </div>
               
-              {/* Abstract UI Visual - File Card */}
-              <div className="mt-auto relative w-full h-32 bg-black/40 rounded-t-xl border-t border-x border-white/10 overflow-hidden mask-linear-fade">
-                <div className="p-4 space-y-3 opacity-80">
-                  <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-full bg-white/20" />
-                    <div className="space-y-1.5">
-                      <div className="h-2 w-24 bg-white/20 rounded-full" />
-                      <div className="h-2 w-16 bg-white/10 rounded-full" />
+              {/* Sketch UI Visual - File Card based on mockup */}
+              <div className="mt-auto relative w-full pt-6">
+                <div className="relative w-full bg-[#1A1A1A] rounded-t-2xl border-t border-x border-white/10 overflow-hidden shadow-2xl transition-transform duration-500 group-hover:-translate-y-2">
+                  
+                  {/* Mockup Header */}
+                  <div className="p-4 border-b border-white/5">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                        <svg className="w-5 h-5 text-white/50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                        </svg>
+                      </div>
+                      <div className="space-y-1.5 flex-1">
+                        <div className="h-3 w-32 bg-white/20 rounded-full" />
+                        <div className="h-2 w-48 bg-white/10 rounded-full" />
+                      </div>
+                    </div>
+                    
+                    {/* Action Buttons Mock */}
+                    <div className="flex gap-2 mt-4">
+                      <div className="h-6 w-20 bg-white/5 rounded-md border border-white/10" />
+                      <div className="h-6 w-20 bg-white/5 rounded-md border border-white/10" />
+                      <div className="h-6 w-28 bg-white/20 rounded-md border border-white/10" />
                     </div>
                   </div>
-                  <div className="h-2 w-full bg-white/5 rounded-full" />
-                  <div className="h-2 w-3/4 bg-white/5 rounded-full" />
+
+                  {/* Mockup Body Layout */}
+                  <div className="p-4 grid grid-cols-2 gap-3 opacity-70">
+                    {/* Left Column - Info */}
+                    <div className="space-y-3">
+                      <div className="bg-white/5 rounded-xl p-3 border border-white/5">
+                        <div className="h-2.5 w-24 bg-white/20 rounded-full mb-3" />
+                        <div className="space-y-2">
+                          <div>
+                            <div className="h-1.5 w-12 bg-white/10 rounded-full mb-1" />
+                            <div className="h-2 w-20 bg-white/20 rounded-full" />
+                          </div>
+                          <div>
+                            <div className="h-1.5 w-16 bg-white/10 rounded-full mb-1" />
+                            <div className="h-2 w-28 bg-white/20 rounded-full" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Right Column - Docs & Notes */}
+                    <div className="space-y-3">
+                      {/* Docs */}
+                      <div className="bg-white/5 rounded-xl p-3 border border-white/5">
+                        <div className="flex justify-between items-center mb-3">
+                          <div className="h-2.5 w-20 bg-white/20 rounded-full" />
+                          <div className="h-1.5 w-10 bg-white/10 rounded-full" />
+                        </div>
+                        <div className="space-y-2">
+                          <div className="flex justify-between items-center">
+                            <div className="flex gap-2 items-center">
+                              <div className="w-3 h-3 rounded bg-white/10" />
+                              <div className="h-2 w-16 bg-white/20 rounded-full" />
+                            </div>
+                            <div className="h-1.5 w-12 bg-emerald-500/30 rounded-full" />
+                          </div>
+                          <div className="flex justify-between items-center">
+                            <div className="flex gap-2 items-center">
+                              <div className="w-3 h-3 rounded bg-white/10" />
+                              <div className="h-2 w-20 bg-white/20 rounded-full" />
+                            </div>
+                            <div className="h-1.5 w-12 bg-amber-500/30 rounded-full" />
+                          </div>
+                        </div>
+                      </div>
+                      
+                      {/* Notes Preview */}
+                      <div className="bg-white/5 rounded-xl p-3 border border-white/5 h-16">
+                        <div className="h-2.5 w-16 bg-white/20 rounded-full mb-2" />
+                        <div className="h-1.5 w-full bg-white/10 rounded-full mb-1" />
+                        <div className="h-1.5 w-3/4 bg-white/10 rounded-full" />
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Gradient Fade to obscure bottom */}
+                  <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[#1A1A1A] to-transparent" />
                 </div>
               </div>
             </div>
@@ -157,11 +342,11 @@ export function OperationalContext() {
             <div className="relative p-8 flex flex-col md:flex-row items-center gap-8">
               <div className="flex-1 text-left">
                 <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center mb-4 text-white">
-                  <MousePointerClick className="w-5 h-5" />
+                  <svg role="img" viewBox="0 0 24 24" fill="currentColor" className="w-5 h-5" xmlns="http://www.w3.org/2000/svg"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
                 </div>
-                <h3 className="text-2xl font-semibold text-white mb-3 tracking-tight">Tú tienes la última palabra</h3>
-                <p className="text-white/60 leading-relaxed text-pretty">
-                  La IA automatiza el trabajo pesado, pero <strong className="text-white font-medium">tú decides</strong> quién visita y quién alquila. Mantén el control total.
+                <h3 className="text-2xl font-semibold text-white mb-3 tracking-tight">Decide a quién enseñas el piso</h3>
+                <p className="text-white/60 leading-relaxed text-pretty max-w-xl">
+                  La IA filtra y organiza, pero tú decides quién visita. Evita paseos inútiles y céntrate en los candidatos viables.
                 </p>
               </div>
               

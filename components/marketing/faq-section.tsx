@@ -1,5 +1,6 @@
 "use client"
 
+// Force rebuild
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 const faqs = [

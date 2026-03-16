@@ -3,43 +3,43 @@ import { Clock, Database, Calendar, FileCheck, BarChart3, MessageSquare } from "
 const benefits = [
   {
     icon: Clock,
-    title: "Ahorra Horas Cada Día",
+    title: "Evita perseguir leads manualmente",
     description:
-      "Automatiza respuestas a leads, recordatorios y seguimientos. Dedica tu tiempo a cerrar operaciones, no más emails.",
+      "Automatiza respuestas y recordatorios. Olvídate de perseguir documentación por email o teléfono.",
     highlight: "49 minutos ahorrados por anuncio al día",
   },
   {
     icon: Database,
-    title: "Todos los Datos Centralizados",
+    title: "Expediente único por candidato",
     description:
-      "Ingresos, documentos, comunicaciones y estado de cada lead en un solo lugar. Accede a todo con un click.",
+      "Ingresos, documentos y scoring en un solo lugar. Ten todo claro antes de agendar la visita.",
     highlight: "Un panel, toda la info",
   },
   {
     icon: MessageSquare,
-    title: "Solicitud Automática de Datos",
+    title: "Filtro previo a la visita",
     description:
-      "El sistema solicita datos personales, DNI, cantidad de ingresos y documentación a cada candidato. Tú solo validas.",
+      "El sistema solicita y valida requisitos automáticamente antes de que pierdas tiempo enseñando el piso.",
     highlight: "Verificación humana final",
   },
   {
     icon: Calendar,
-    title: "Gestión de Visitas Sin Esfuerzo",
+    title: "Agenda solo visitas de calidad",
     description:
-      "Programa, reprograma y cancela visitas. Sincronización con tu calendario y notificaciones automáticas.",
+      "Coordina horarios automáticamente, pero solo con quien tú decidas que merece la pena.",
     highlight: "Cero llamadas sin contestar",
   },
   {
     icon: BarChart3,
-    title: "Métricas en Tiempo Real",
+    title: "Control total de tu cartera",
     description:
-      "Conversión, leads por día, tiempo ahorrado, análisis de calidad. Todo para tomar decisiones informadas.",
+      "Visualiza en tiempo real quién cumple requisitos y quién no. Toma decisiones informadas.",
     highlight: "Los datos que necesitas para tomar decisiones",
   },
   {
     icon: FileCheck,
-    title: "Análisis de Requisitos de Aval",
-    description: "Calcula automáticamente si el inquilino necesita aval según ingresos vs precio del alquiler.",
+    title: "Scoring financiero automático",
+    description: "Calcula el esfuerzo financiero al instante para descartar o avanzar rápido.",
     highlight: "Tasa de esfuerzo clara y disponible continuamente",
   },
 ]
@@ -51,10 +51,10 @@ export function BenefitsGrid() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground text-balance leading-[1.1]">
-            Todo lo que necesitas para <span className="text-primary">escalar tu agencia</span>
+            Automatización que te <span className="text-primary">devuelve el control</span>
           </h2>
           <p className="mt-4 text-lg font-normal text-muted-foreground text-pretty leading-normal">
-            Automatiza las tareas repetitivas y enfócate en lo que importa: cerrar contratos y hacer crecer tu negocio.
+            Deja que la tecnología filtre y gestione para que tú puedas cerrar operaciones.
           </p>
         </div>
 

@@ -17,46 +17,46 @@ const steps: Step[] = [
     id: "capture",
     number: "01",
     icon: MessageSquare,
-    label: "Captura",
+    label: "Captura leads",
     badge: "IA",
     badgeAria: "Acción de IA",
-    text: "Detecta leads de portales y email.",
+    text: "Centraliza interesados de Idealista, Fotocasa y web.",
   },
   {
     id: "request",
     number: "02",
     icon: Bell,
-    label: "Pide datos",
+    label: "Cualificación",
     badge: "IA",
     badgeAria: "Acción de IA",
-    text: "DNI, ingresos y contacto, todo en un link.",
+    text: "La IA contacta por WhatsApp y pide perfil y requisitos.",
   },
   {
     id: "verify",
     number: "03",
     icon: UserCheck,
-    label: "Valida",
+    label: "Documentación",
     badge: "IA",
     badgeAria: "Acción de IA",
-    text: "Extrae y comprueba requisitos del anuncio.",
+    text: "Solicita nóminas y DNI antes de agendar nada.",
   },
   {
     id: "schedule",
     number: "04",
     icon: CalendarCheck,
-    label: "Agenda",
+    label: "Filtrado y Agenda",
     badge: "IA/Tú",
     badgeAria: "Acción conjunta",
-    text: "3 horarios sugeridos; confirmación automática.",
+    text: "Tú apruebas el perfil y la IA coordina la visita.",
   },
   {
     id: "docs",
     number: "05",
     icon: FileSignature,
-    label: "Documenta",
+    label: "Cierre",
     badge: "IA/Tú",
     badgeAria: "Acción conjunta",
-    text: "Recoge archivos y deja todo listo para firmar.",
+    text: "Enseñas el piso y cierras con el mejor candidato.",
   },
 ]
 
@@ -66,7 +66,7 @@ export function HowItWorks() {
       <div id="how-it-works" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-20">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground text-balance leading-[1.1]">
-            Cómo funciona (en 45 s)
+            Tu nuevo proceso de alquiler
           </h2>
           <p className="mt-4 text-lg font-normal text-muted-foreground text-pretty leading-normal">
             La IA hace el trabajo repetitivo. Tú decides lo importante.

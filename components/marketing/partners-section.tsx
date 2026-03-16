@@ -10,11 +10,11 @@ export function PartnersSection() {
           <div className="flex-1 space-y-8 lg:pr-8">
             <div className="space-y-4">
               <Badge variant="secondary" className="bg-green-500/10 text-green-600 hover:bg-green-500/20 border-green-500/20 shadow-sm px-4 py-1.5 text-sm">
-                Tu compañero IA contesta por ti
+                Respuesta inmediata 24/7
               </Badge>
               <h2 className="text-4xl lg:text-5xl font-bold text-foreground tracking-tight leading-tight">
-                Agente IA WhatsApp <br/>
-                <span className="text-green-600">siempre activo</span>
+                Tu operativa en WhatsApp <br/>
+                <span className="text-green-600">siempre activa</span>
               </h2>
               <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-2xl">
                 Tu asistente virtual gestiona todo el ciclo de vida del lead directamente en WhatsApp, manteniendo a todos informados en tiempo real sin que tengas que levantar un dedo.
@@ -23,10 +23,10 @@ export function PartnersSection() {
 
             <div className="grid sm:grid-cols-2 gap-4 pt-4">
               {[
-                { title: "Recopilación de Datos", desc: "Pide datos automáticamente a cada inquilino y los organiza" },
-                { title: "Comunicación Fluida", desc: "Mantiene informados a inquilinos y agentes paso a paso" },
-                { title: "Atención Inteligente", desc: "Responde dudas específicas sobre el inmueble al instante" },
-                { title: "Gestión de Visitas", desc: "Coordina citas y notifica cambios en las reservas a todos" }
+                { title: "Cualificación automática", desc: "Pide datos automáticamente a cada inquilino y los organiza" },
+                { title: "Centralización de mensajes", desc: "Mantiene informados a inquilinos y agentes paso a paso" },
+                { title: "Resolución de dudas", desc: "Responde preguntas básicas sobre el inmueble al instante" },
+                { title: "Coordinación de agenda", desc: "Gestiona citas y notifica cambios en las reservas a todos" }
               ].map((item, i) => (
                 <div key={i} className="flex gap-4 items-start p-4 rounded-2xl bg-card border border-border/50 hover:border-green-500/30 hover:shadow-lg hover:shadow-green-500/5 transition-all duration-300">
                   <div className="mt-1 h-8 w-8 rounded-full bg-green-500/10 flex items-center justify-center flex-shrink-0">
