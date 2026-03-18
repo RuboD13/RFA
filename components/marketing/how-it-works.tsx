@@ -1,5 +1,3 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { MessageSquare, UserCheck, CalendarCheck, Bell, FileSignature } from "lucide-react"
 
 type Step = {
@@ -112,11 +110,6 @@ export function HowItWorks() {
           })}
         </ol>
 
-        <div className="mt-10 flex justify-center">
-          <Button asChild>
-            <Link href="/signup?seedLead=true">Probar con un lead de ejemplo</Link>
-          </Button>
-        </div>
       </div>
     </section>
   )

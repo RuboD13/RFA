@@ -40,7 +40,7 @@ export function Testimonials() {
             Lo que dicen nuestros <span className="text-primary">clientes</span>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground text-pretty">
-            Más de 50 agencias en toda España ya confían en RentAFlow para automatizar su gestión de alquileres.-
+            Más de 50 agencias en toda España ya confían en RentAFlow para automatizar su gestión de alquileres.
           </p>
         </div>
 

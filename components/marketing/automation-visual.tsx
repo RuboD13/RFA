@@ -32,7 +32,7 @@ export function AutomationVisual() {
   return (
     <div className="relative w-full max-w-6xl mx-auto p-4 sm:p-8 min-h-[420px] flex items-center justify-center">
       <div className="absolute inset-0 bg-background/60 backdrop-blur-xl border border-border/50 rounded-3xl shadow-2xl overflow-hidden" />
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:32px_32px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(128,128,128,0.05)_1px,transparent_1px),linear-gradient(to_bottom,rgba(128,128,128,0.05)_1px,transparent_1px)] bg-[size:32px_32px]" />
 
       <div className="relative z-10 w-full grid grid-cols-1 lg:grid-cols-[1.1fr_2fr_1.4fr] gap-8 lg:gap-12 items-center">
         <div className="relative h-[240px]">
@@ -199,7 +199,7 @@ export function AutomationVisual() {
           left: 6%;
           width: 12px;
           height: 12px;
-          background: hsl(var(--muted));
+          background: var(--muted);
           border-radius: 50%;
           transform: translateY(-50%);
           opacity: 0.3;

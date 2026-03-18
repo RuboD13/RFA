@@ -39,7 +39,8 @@ const benefits = [
   {
     icon: FileCheck,
     title: "Scoring financiero automático",
-    description: "Calcula el esfuerzo financiero al instante para descartar o avanzar rápido.",
+    description:
+      "Calcula el esfuerzo financiero al instante para descartar o avanzar rápido.",
     highlight: "Tasa de esfuerzo clara y disponible continuamente",
   },
 ]
@@ -51,7 +52,7 @@ export function BenefitsGrid() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground text-balance leading-[1.1]">
-            Automatización que te <span className="text-primary">devuelve el control</span>
+            Automatización que te devuelve el control
           </h2>
           <p className="mt-4 text-lg font-normal text-muted-foreground text-pretty leading-normal">
             Deja que la tecnología filtre y gestione para que tú puedas cerrar operaciones.
