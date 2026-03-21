@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button"
 import { X, ArrowRight, CheckCircle2 } from "lucide-react"
 import { useDemoModal } from "./demo-modal-context"
 import { cn } from "@/lib/utils"
+import Link from "next/link"
+import { PrivacyContent } from "@/components/marketing/privacy-content"
 
 export function DemoModal() {
   const { isOpen, closeDemoModal } = useDemoModal()
@@ -16,9 +18,11 @@ export function DemoModal() {
     usesIdealistaTools: "",
     weeklyLeadVolume: "",
     usesCrm: "",
+    acceptsRgpd: false,
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [showPrivacyModal, setShowPrivacyModal] = useState(false)
 
   // Reset step when modal opens/closes
   useEffect(() => {
@@ -40,6 +44,7 @@ export function DemoModal() {
           usesIdealistaTools: "",
           weeklyLeadVolume: "",
           usesCrm: "",
+          acceptsRgpd: false,
         })
       }, 300)
       return () => clearTimeout(timer)
@@ -60,8 +65,10 @@ export function DemoModal() {
     e.preventDefault()
     if (step === 1) {
       // Basic validation for step 1
-      if (demoForm.name && demoForm.email) {
+      if (demoForm.name && demoForm.email && demoForm.acceptsRgpd) {
         setStep(2)
+      } else if (!demoForm.acceptsRgpd) {
+        alert("Debes aceptar la Política de Privacidad para continuar.")
       }
     } else if (step === 2) {
       // Submit via webhook
@@ -210,6 +217,28 @@ export function DemoModal() {
                     onChange={(e) => setDemoForm((s) => ({ ...s, phone: e.target.value }))}
                   />
                 </div>
+
+                <div className="flex items-start gap-2 pt-2">
+                  <input
+                    type="checkbox"
+                    id="rgpd"
+                    className="mt-1 w-4 h-4 rounded border-border text-primary focus:ring-primary"
+                    checked={demoForm.acceptsRgpd}
+                    onChange={(e) => setDemoForm((s) => ({ ...s, acceptsRgpd: e.target.checked }))}
+                    required
+                  />
+                  <label htmlFor="rgpd" className="text-xs text-muted-foreground leading-tight">
+                    He leído y acepto la{" "}
+                    <button 
+                      type="button"
+                      className="underline hover:text-foreground transition-colors" 
+                      onClick={() => setShowPrivacyModal(true)}
+                    >
+                      Política de Privacidad
+                    </button>{" "}
+                    y consiento el tratamiento de mis datos para la gestión de esta solicitud.
+                  </label>
+                </div>
               </div>
             )}
 
@@ -303,6 +332,51 @@ export function DemoModal() {
           </form>
         )}
       </div>
+
+      {/* Privacy Policy Modal Overlay */}
+      {showPrivacyModal && (
+        <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-200">
+          <div 
+            className="absolute inset-0 bg-black/60 backdrop-blur-sm" 
+            onClick={() => setShowPrivacyModal(false)}
+            aria-hidden="true"
+          />
+          <div className="relative w-full max-w-2xl bg-background text-foreground border border-border rounded-2xl shadow-2xl flex flex-col max-h-[85vh] animate-in zoom-in-95 duration-200">
+            <div className="p-5 border-b border-border flex items-center justify-between shrink-0">
+              <h3 className="text-lg font-semibold">Política de Privacidad</h3>
+              <Button variant="ghost" size="icon" onClick={() => setShowPrivacyModal(false)} className="h-8 w-8">
+                <X className="w-4 h-4" />
+              </Button>
+            </div>
+            
+            <div className="p-6 overflow-y-auto text-sm text-muted-foreground space-y-4 prose prose-sm prose-invert max-w-none">
+              <PrivacyContent />
+            </div>
+
+            <div className="p-5 border-t border-border flex justify-end gap-3 bg-secondary/10 shrink-0 rounded-b-2xl">
+              <Button 
+                type="button" 
+                variant="outline" 
+                onClick={() => {
+                  setDemoForm(s => ({ ...s, acceptsRgpd: false }))
+                  setShowPrivacyModal(false)
+                }}
+              >
+                Rechazo
+              </Button>
+              <Button 
+                type="button" 
+                onClick={() => {
+                  setDemoForm(s => ({ ...s, acceptsRgpd: true }))
+                  setShowPrivacyModal(false)
+                }}
+              >
+                Acepto
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
