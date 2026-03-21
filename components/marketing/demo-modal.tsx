@@ -18,17 +18,21 @@ export function DemoModal() {
     usesCrm: "",
   })
 
+  const [isSubmitting, setIsSubmitting] = useState(false)
+
   // Reset step when modal opens/closes
   useEffect(() => {
     if (isOpen) {
       const timer = setTimeout(() => {
         setStep(1)
+        setIsSubmitting(false)
       }, 0)
       return () => clearTimeout(timer)
     } else {
       // Small delay to reset form after transition
       const timer = setTimeout(() => {
         setStep(1)
+        setIsSubmitting(false)
         setDemoForm({
           name: "",
           email: "",
@@ -52,23 +56,7 @@ export function DemoModal() {
     return () => document.removeEventListener("keydown", onKeyDown)
   }, [isOpen, closeDemoModal])
 
-  const mailtoHref = useMemo(() => {
-    const subject = "Reserva de demo - RentAFlow"
-    const lines = [
-      `Nombre: ${demoForm.name}`,
-      `Email: ${demoForm.email}`,
-      `Teléfono: ${demoForm.phone || "-"}`,
-      "",
-      `¿Usas idealista tools?: ${demoForm.usesIdealistaTools || "-"}`,
-      `Volumen semanal de leads/inquilinos (agencia inmobiliaria): ${demoForm.weeklyLeadVolume || "-"}`,
-      `¿Usáis CRM?: ${demoForm.usesCrm || "-"}`,
-    ]
-
-    const body = lines.join("\n")
-    return `mailto:demo@rentaflow.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-  }, [demoForm])
-
-  const handleNextStep = (e: React.FormEvent) => {
+  const handleNextStep = async (e: React.FormEvent) => {
     e.preventDefault()
     if (step === 1) {
       // Basic validation for step 1
@@ -76,9 +64,25 @@ export function DemoModal() {
         setStep(2)
       }
     } else if (step === 2) {
-      // Submit
-      window.location.href = mailtoHref
-      setStep(3)
+      // Submit via webhook
+      setIsSubmitting(true)
+      try {
+        await fetch("https://acesalquiler-n8n.igc7oi.easypanel.host/webhook/ccbc1523-d0d2-4807-ae6e-146fe18f1b52", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(demoForm),
+        })
+        setStep(3)
+      } catch (error) {
+        console.error("Error al enviar el formulario:", error)
+        // Aunque falle la petición por red, avanzamos al paso 3 para no bloquear al usuario
+        // o se podría añadir un manejo de errores visible.
+        setStep(3)
+      } finally {
+        setIsSubmitting(false)
+      }
     }
   }
 
