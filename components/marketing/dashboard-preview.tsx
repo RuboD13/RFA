@@ -169,13 +169,32 @@ function AnunciosMockup() {
 
 function DashboardMockup() {
   const chartData = [
-    { name: "1 mar", leads: 4, complete: 2 },
-    { name: "2 mar", leads: 3, complete: 1 },
-    { name: "3 mar", leads: 2, complete: 1 },
-    { name: "4 mar", leads: 5, complete: 3 },
-    { name: "5 mar", leads: 6, complete: 4 },
-    { name: "6 mar", leads: 4, complete: 2 },
-    { name: "7 mar", leads: 7, complete: 5 },
+    { name: "01/02", leads: 12, complete: 8, discarded: 1 },
+    { name: "02/02", leads: 15, complete: 10, discarded: 2 },
+    { name: "03/02", leads: 18, complete: 12, discarded: 1 },
+    { name: "04/02", leads: 14, complete: 9, discarded: 0 },
+    { name: "05/02", leads: 22, complete: 15, discarded: 3 },
+    { name: "06/02", leads: 28, complete: 18, discarded: 4 },
+    { name: "07/02", leads: 35, complete: 22, discarded: 2 },
+    { name: "08/02", leads: 42, complete: 28, discarded: 5 },
+    { name: "09/02", leads: 38, complete: 25, discarded: 3 },
+    { name: "10/02", leads: 45, complete: 32, discarded: 4 },
+    { name: "11/02", leads: 52, complete: 38, discarded: 6 },
+    { name: "12/02", leads: 48, complete: 35, discarded: 5 },
+    { name: "13/02", leads: 55, complete: 40, discarded: 4 },
+    { name: "14/02", leads: 62, complete: 45, discarded: 7 },
+    { name: "15/02", leads: 58, complete: 42, discarded: 6 },
+    { name: "16/02", leads: 65, complete: 48, discarded: 5 },
+    { name: "17/02", leads: 72, complete: 55, discarded: 8 },
+    { name: "18/02", leads: 68, complete: 50, discarded: 6 },
+    { name: "19/02", leads: 75, complete: 58, discarded: 7 },
+    { name: "20/02", leads: 82, complete: 62, discarded: 9 },
+    { name: "21/02", leads: 78, complete: 60, discarded: 8 },
+    { name: "22/02", leads: 85, complete: 65, discarded: 7 },
+    { name: "23/02", leads: 92, complete: 70, discarded: 10 },
+    { name: "24/02", leads: 88, complete: 68, discarded: 8 },
+    { name: "25/02", leads: 95, complete: 72, discarded: 9 },
+    { name: "26/02", leads: 102, complete: 78, discarded: 11 },
   ]
 
   return (
@@ -192,23 +211,23 @@ function DashboardMockup() {
             <span className="text-sm font-medium text-foreground">Total Leads</span>
             <Users className="w-4 h-4 text-muted-foreground" />
           </div>
-          <div className="text-2xl font-bold text-foreground">1828</div>
+          <div className="text-2xl font-bold text-foreground">1965</div>
           <p className="text-xs text-muted-foreground mt-1">Todos los clientes registrados</p>
         </div>
         <div className="p-4 border rounded-xl bg-card">
           <div className="flex justify-between items-start mb-2">
             <span className="text-sm font-medium text-foreground">Leads Nuevos Hoy</span>
-            <span className="text-[10px] bg-primary/10 text-primary px-1.5 py-0.5 rounded">Hoy</span>
+            <span className="text-[10px] bg-primary text-primary-foreground px-2 py-0.5 rounded-full font-medium">Hoy</span>
           </div>
-          <div className="text-2xl font-bold text-foreground text-primary">1</div>
+          <div className="text-2xl font-bold text-primary">3</div>
           <p className="text-xs text-muted-foreground mt-1">Registrados en las últimas 24h</p>
         </div>
         <div className="p-4 border rounded-xl bg-card">
           <div className="flex justify-between items-start mb-2">
             <span className="text-sm font-medium text-foreground">Leads con información completa</span>
-            <span className="text-[10px] bg-success/10 text-success px-1.5 py-0.5 rounded">Hoy</span>
+            <span className="text-[10px] bg-success text-success-foreground px-2 py-0.5 rounded-full font-medium text-white">Hoy</span>
           </div>
-          <div className="text-2xl font-bold text-success">0</div>
+          <div className="text-2xl font-bold text-success">1</div>
           <p className="text-xs text-muted-foreground mt-1">Con estado "Datos Completos" hoy</p>
         </div>
       </div>
@@ -220,23 +239,28 @@ function DashboardMockup() {
             <h3 className="text-sm font-semibold text-foreground">Estadísticas de la Inmobiliaria</h3>
             <p className="text-xs text-muted-foreground">Totales y rendimiento agregados por periodo</p>
           </div>
-          <div className="flex items-center gap-1 text-[10px] bg-secondary/50 p-1 rounded-lg">
-            <span className="px-2 py-1 rounded bg-background shadow-sm text-foreground font-medium">Mes</span>
-            <span className="px-2 py-1 text-muted-foreground cursor-pointer hover:text-foreground">Mes ant.</span>
-            <span className="px-2 py-1 text-muted-foreground cursor-pointer hover:text-foreground">Ciclo</span>
+          <div className="flex items-center gap-3">
+            <span className="text-xs font-medium text-muted-foreground hidden sm:inline-block">01/03/2026 - 31/03/2026</span>
+            <div className="flex items-center gap-1 text-[10px] bg-secondary/30 p-1 rounded-lg">
+              <span className="px-2 py-1 text-muted-foreground cursor-pointer hover:text-foreground">Hoy</span>
+              <span className="px-2 py-1 rounded bg-background shadow-sm text-foreground font-medium">Mes</span>
+              <span className="px-2 py-1 text-muted-foreground cursor-pointer hover:text-foreground">Mes ant.</span>
+              <span className="px-2 py-1 text-muted-foreground cursor-pointer hover:text-foreground">Ciclo</span>
+              <span className="px-2 py-1 text-muted-foreground cursor-pointer hover:text-foreground">Personalizado</span>
+            </div>
           </div>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { label: "Leads Totales", value: "21", color: "text-foreground" },
-            { label: "Datos Completos", value: "8", color: "text-success" },
-            { label: "Tasa Conversión", value: "38.1%", color: "text-primary" },
-            { label: "Descartados", value: "3", color: "text-destructive" },
+            { label: "Leads Totales", value: "158", color: "text-foreground" },
+            { label: "Datos Completos", value: "39", color: "text-success" },
+            { label: "Tasa Conversión", value: "24.7%", color: "text-primary" },
+            { label: "Descartados", value: "6", color: "text-destructive" },
           ].map((stat, i) => (
-            <div key={i} className="p-4 bg-secondary/20 rounded-xl text-center">
-              <div className={`text-2xl font-bold ${stat.color}`}>{stat.value}</div>
-              <div className="text-xs text-muted-foreground mt-1">{stat.label}</div>
+            <div key={i} className="p-4 bg-secondary/10 border border-border/50 rounded-xl text-center">
+              <div className={`text-3xl font-bold mb-1 ${stat.color}`}>{stat.value}</div>
+              <div className="text-xs text-muted-foreground">{stat.label}</div>
             </div>
           ))}
         </div>
@@ -247,14 +271,14 @@ function DashboardMockup() {
         <h3 className="text-sm font-semibold text-foreground">Preparados para la fase de visita</h3>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[
-            { label: "Datos Completados", value: "8", color: "text-success" },
-            { label: "Candidatos Aprobados", value: "0", color: "text-success" },
-            { label: "Visita Propuesta", value: "0", color: "text-primary" },
-            { label: "Visita Completada", value: "0", color: "text-primary" },
+            { label: "Datos Completados", value: "29", color: "text-success" },
+            { label: "Candidatos Aprobados", value: "10", color: "text-success" },
+            { label: "Visita Propuesta", value: "7", color: "text-primary" },
+            { label: "Visita Completada", value: "2", color: "text-primary" },
           ].map((stat, i) => (
             <div key={i} className="p-4 bg-secondary/10 border border-border/50 rounded-xl text-center">
               <div className="text-xs text-muted-foreground mb-1">{stat.label}</div>
-              <div className={`text-xl font-bold ${stat.color}`}>{stat.value}</div>
+              <div className={`text-2xl font-bold ${stat.color}`}>{stat.value}</div>
             </div>
           ))}
         </div>
@@ -263,21 +287,25 @@ function DashboardMockup() {
       {/* Chart Section */}
       <div className="p-4 border rounded-xl bg-card">
         <h3 className="text-sm font-semibold text-foreground mb-4">Leads por periodo</h3>
-        <div className="h-[200px] w-full">
+        <div className="h-[250px] w-full">
           <ResponsiveContainer width="100%" height="100%">
-            <LineChart data={chartData}>
+            <LineChart data={chartData} margin={{ top: 5, right: 10, left: -20, bottom: 0 }}>
               <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="hsl(var(--border))" />
               <XAxis
                 dataKey="name"
                 axisLine={false}
                 tickLine={false}
-                tick={{ fontSize: 10, fill: "hsl(var(--muted-foreground))" }}
+                tick={{ fontSize: 9, fill: "hsl(var(--muted-foreground))" }}
                 dy={10}
+                angle={-45}
+                textAnchor="end"
+                height={40}
               />
               <YAxis
                 axisLine={false}
                 tickLine={false}
                 tick={{ fontSize: 10, fill: "hsl(var(--muted-foreground))" }}
+                ticks={[-2, 18, 38, 73]}
               />
               <Tooltip
                 contentStyle={{
@@ -287,66 +315,78 @@ function DashboardMockup() {
                   fontSize: "12px",
                 }}
               />
+              <Line type="monotone" dataKey="complete" name="Datos Completos" stroke="hsl(var(--success))" strokeWidth={2} dot={{ r: 3 }} />
+              <Line type="monotone" dataKey="discarded" name="Descartados" stroke="hsl(var(--destructive))" strokeWidth={2} dot={{ r: 3 }} />
               <Line
                 type="monotone"
                 dataKey="leads"
-                stroke="hsl(var(--primary))"
+                name="Leads Totales"
+                stroke="#3b82f6"
                 strokeWidth={2}
                 dot={{ r: 3 }}
                 activeDot={{ r: 5 }}
               />
-              <Line type="monotone" dataKey="complete" stroke="hsl(var(--success))" strokeWidth={2} dot={{ r: 3 }} />
             </LineChart>
           </ResponsiveContainer>
+        </div>
+        <div className="flex justify-center items-center gap-4 mt-4 text-[10px]">
+          <div className="flex items-center gap-1.5"><div className="w-2 h-0.5 bg-success rounded"></div><span className="text-success">Datos Completos</span></div>
+          <div className="flex items-center gap-1.5"><div className="w-2 h-0.5 bg-destructive rounded"></div><span className="text-destructive">Descartados</span></div>
+          <div className="flex items-center gap-1.5"><div className="w-2 h-0.5 bg-blue-500 rounded"></div><span className="text-blue-500">Leads Totales</span></div>
         </div>
       </div>
 
       {/* Bottom Section: Calidad & Consumo */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="space-y-6">
         {/* Calidad */}
         <div className="space-y-4">
           <h3 className="text-sm font-semibold text-foreground">Análisis de Calidad</h3>
           <div className="grid grid-cols-2 gap-4">
-            <div className="p-4 bg-secondary/10 border border-border/50 rounded-xl text-center">
-              <div className="text-xs text-muted-foreground mb-1">Datos Incompletos</div>
-              <div className="text-xl font-bold text-chart-4">10</div>
+            <div className="p-6 bg-secondary/10 border border-border/50 rounded-xl text-center">
+              <div className="text-xs text-muted-foreground mb-2">Datos Incompletos</div>
+              <div className="text-3xl font-bold text-yellow-500">113</div>
             </div>
-            <div className="p-4 bg-secondary/10 border border-border/50 rounded-xl text-center">
-              <div className="text-xs text-muted-foreground mb-1">Necesidad de Aval</div>
-              <div className="text-xl font-bold text-primary">0</div>
+            <div className="p-6 bg-secondary/10 border border-border/50 rounded-xl text-center">
+              <div className="text-xs text-muted-foreground mb-2">Necesidad de Aval</div>
+              <div className="text-3xl font-bold text-purple-400">0</div>
             </div>
           </div>
+          <div className="text-center text-[10px] text-muted-foreground">Métricas calculadas para el periodo: Este mes</div>
         </div>
 
         {/* Consumo */}
         <div className="space-y-4">
           <h3 className="text-sm font-semibold text-foreground">Consumo y Rendimiento</h3>
+          <div className="text-[10px] text-muted-foreground">Ciclo actual: 12/03/2026 - 10/04/2026</div>
           <div className="p-4 bg-card border rounded-xl space-y-4">
             <div>
               <div className="flex justify-between text-xs mb-2">
                 <span className="text-muted-foreground">Leads</span>
-                <span className="font-medium text-foreground">1 / 500</span>
+                <div className="flex gap-4">
+                  <span className="font-medium text-foreground">134 / 500</span>
+                  <span className="text-muted-foreground">Tiempo ahorrado <span className="font-medium text-foreground ml-1">7h 48m</span></span>
+                </div>
               </div>
               <div className="h-2 bg-secondary rounded-full overflow-hidden">
-                <div className="h-full bg-foreground w-[0.2%]"></div>
+                <div className="h-full bg-foreground w-[26.8%]"></div>
               </div>
               <div className="flex justify-between mt-1">
-                <span className="text-[10px] text-muted-foreground">0.2% del plan utilizado</span>
-                <span className="text-[10px] text-foreground font-medium">Tiempo ahorrado: 0h 3m</span>
+                <span className="text-[10px] text-muted-foreground">26.8% del plan utilizado</span>
+                <span className="text-[10px] text-muted-foreground">Basado en 1.27 min/mensaje procesado</span>
               </div>
             </div>
-            <div className="space-y-2 pt-2 border-t border-border">
+            <div className="space-y-3 pt-4 border-t border-border">
               <div className="flex justify-between text-xs">
-                <span className="text-muted-foreground">WhatsApps enviados</span>
-                <span className="font-medium text-foreground">1</span>
+                <span className="text-muted-foreground">Whatsapps enviados</span>
+                <span className="font-medium text-foreground">174</span>
               </div>
               <div className="flex justify-between text-xs">
                 <span className="text-muted-foreground">Coste aprox. WhatsApps</span>
-                <span className="font-medium text-success">€0.03</span>
+                <span className="font-medium text-success">€5.89</span>
               </div>
               <div className="flex justify-between text-xs">
                 <span className="text-muted-foreground">Emails enviados</span>
-                <span className="font-medium text-foreground">1</span>
+                <span className="font-medium text-foreground">185</span>
               </div>
             </div>
           </div>
