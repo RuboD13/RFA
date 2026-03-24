@@ -71,7 +71,7 @@ export function IntegrationsSection() {
                       <div className="flex flex-col gap-1 pr-2">
                         <span className="text-[10px] text-black/60 font-medium truncate">Contactos recibidos por chat</span>
                         <div className="flex items-baseline gap-1">
-                           <span className="text-lg md:text-xl font-bold text-black tabular-nums">1</span>
+                           <span className="text-lg md:text-xl font-bold text-black tabular-nums">28</span>
                            <span className="text-xs text-black/60">en las últimas 24 horas</span>
                         </div>
                       </div>
@@ -80,7 +80,7 @@ export function IntegrationsSection() {
                       <div className="flex flex-col gap-1 px-2 md:px-4 relative">
                         <span className="text-[10px] text-black/60 font-medium">Respondidos</span>
                         <div className="flex items-center gap-2 mb-1">
-                           <span className="text-lg md:text-xl font-bold text-emerald-600 tabular-nums">1/1</span>
+                           <span className="text-lg md:text-xl font-bold text-emerald-600 tabular-nums">28/28</span>
                            <span className="px-1.5 py-0.5 rounded-full bg-emerald-100 text-emerald-700 text-[10px] font-bold border border-emerald-200">100%</span>
                         </div>
                          <div className="flex items-center gap-1">

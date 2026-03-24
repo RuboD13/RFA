@@ -36,7 +36,7 @@ export function OperationalContext() {
             {/* El proceso tradicional */}
             <div className="relative overflow-hidden rounded-3xl border border-white/5 bg-[#111111] p-8 sm:p-10 group transition-colors duration-500 hover:bg-[#151515]">
               <div className="absolute top-0 right-0 w-64 h-64 bg-red-500/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 group-hover:bg-red-500/10 transition-colors duration-500"></div>
-              <div className="relative z-10">
+              <div className="relative z-10 h-full flex flex-col justify-center">
                 <div className="flex items-center gap-3 mb-8">
                   <div className="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center border border-red-500/20">
                     <AlertCircle className="w-5 h-5 text-red-400" />
@@ -45,15 +45,17 @@ export function OperationalContext() {
                     El proceso tradicional
                   </h3>
                 </div>
-                <ul className="space-y-5">
+                <ul className="space-y-5 flex-1 flex flex-col justify-center">
                   {[
                     "Decenas de leads sin datos cualificados",
                     "Horas pidiendo documentación por email y teléfono",
+                    "Desorden de documentos en correos y WhatsApp",
+                    "Gestión manual de la agenda y visitas",
                     "Visitas con personas que no cumplen requisitos",
                     "Mensajes y llamadas constantes interrumpiendo"
                   ].map((item, i) => (
-                    <li key={i} className="flex items-start gap-4 text-white/60 leading-relaxed">
-                      <div className="mt-1.5 h-1.5 w-1.5 rounded-full bg-red-500/40 shrink-0"></div>
+                    <li key={i} className="flex items-center gap-4 text-white/60 leading-relaxed">
+                      <div className="h-1.5 w-1.5 rounded-full bg-red-500/40 shrink-0"></div>
                       <span>{item}</span>
                     </li>
                   ))}
@@ -86,8 +88,7 @@ export function OperationalContext() {
                         Filtro en piloto automático
                       </h4>
                       <p className="text-white/70 text-sm leading-relaxed text-pretty">
-                        WhatsApp atiende a los leads, solicita documentación y
-                        descarta a los no cualificados.
+                        Tanto por correo electrónico como por WhatsApp, RentAFlow atiende a los leads, solicita documentación y descarta a los no cualificados.
                       </p>
                     </div>
                   </div>

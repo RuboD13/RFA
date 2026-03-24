@@ -161,7 +161,9 @@ export function DemoModal() {
             <div className="w-full pt-6 border-t border-background/10">
               <p className="text-sm text-background/60 mb-2 font-medium">¿Dudas urgentes?</p>
               <a 
-                href="mailto:info@rentaflow.es" 
+                href="mailto:info@rentaflow.es"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-lg font-semibold hover:text-green-400 transition-colors inline-flex items-center gap-2"
               >
                 info@rentaflow.es

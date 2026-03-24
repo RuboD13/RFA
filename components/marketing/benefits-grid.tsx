@@ -3,9 +3,9 @@ import { Clock, Database, Calendar, FileCheck, BarChart3, MessageSquare } from "
 const benefits = [
   {
     icon: Clock,
-    title: "Evita perseguir leads manualmente",
+    title: "Evita perseguir leads",
     description:
-      "Automatiza respuestas y recordatorios. Olvídate de perseguir documentación por email o teléfono.",
+      "Automatiza respuestas y recordatorios. Olvídate de perseguir documentación por email o teléfono. Ahorra cientos de horas anuales con cero solicitudes sin respuesta.",
     highlight: "49 minutos ahorrados por anuncio al día",
   },
   {
@@ -67,7 +67,7 @@ export function BenefitsGrid() {
             return (
               <div
                 key={benefit.title}
-                className="group relative bg-card rounded-2xl border border-border p-6 lg:p-8 hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+                className="group relative bg-card rounded-2xl border border-border p-6 lg:p-8 hover:border-primary/30 hover:shadow-lg transition-all duration-300 flex flex-col"
               >
                 {/* Icon */}
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
@@ -76,11 +76,13 @@ export function BenefitsGrid() {
 
                 {/* Content */}
                 <h3 className="text-xl font-medium text-foreground mb-2">{benefit.title}</h3>
-                <p className="text-muted-foreground leading-normal mb-4 font-normal">{benefit.description}</p>
+                <p className="text-muted-foreground leading-normal mb-6 font-normal whitespace-pre-line flex-1">{benefit.description}</p>
 
                 {/* Highlight Badge */}
-                <div className="inline-flex items-center px-3 py-1 rounded-full bg-secondary text-sm font-medium text-foreground">
-                  {benefit.highlight}
+                <div className="mt-auto">
+                  <div className="inline-flex items-center px-3 py-1 rounded-full bg-secondary text-sm font-medium text-foreground">
+                    {benefit.highlight}
+                  </div>
                 </div>
               </div>
             )
