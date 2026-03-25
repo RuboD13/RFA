@@ -2,11 +2,63 @@
 
 import { useMemo, useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
-import { X, ArrowRight, CheckCircle2 } from "lucide-react"
+import { X, ArrowRight, CheckCircle2, Gift } from "lucide-react"
 import { useDemoModal } from "./demo-modal-context"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
 import { PrivacyContent } from "@/components/marketing/privacy-content"
+
+const modalPlans = [
+  {
+    name: "Mini",
+    description: "Para empezar a automatizar",
+    price: "49€",
+    period: "/mes",
+    features: ["1 usuario", "100 leads/mes", "3 anuncios simultáneos", "Respuestas automáticas por email"],
+    whatsapp: "50 mensajes de WhatsApp/mes",
+  },
+  {
+    name: "Starter",
+    description: "Para operar tu negocio de alquileres",
+    price: "99€",
+    period: "/mes",
+    features: [
+      "2 usuarios",
+      "400 leads/mes",
+      "6 anuncios simultáneos",
+      "Automatización completa del proceso",
+      "Calendario inteligente de visitas",
+      "WhatsApp integrado con tu marca",
+    ],
+    whatsapp: "400 mensajes de WhatsApp/mes",
+    popular: true,
+  },
+  {
+    name: "Agency",
+    description: "Para gestionar equipos y operaciones",
+    price: "249€",
+    period: "/mes",
+    features: [
+      "6 usuarios",
+      "850 leads/mes",
+      "10 anuncios simultáneos",
+      "Roles y permisos personalizados",
+      "Multi-agencia / oficinas",
+      "Facturación a medida",
+      "WhatsApp integrado con tu marca",
+      "Métricas avanzadas",
+    ],
+    whatsapp: "850 mensajes de WhatsApp/mes",
+  },
+  {
+    name: "Corporate",
+    description: "Para grandes volúmenes",
+    price: "A medida",
+    period: "",
+    features: ["Volumen alto", "Desarrollo a medida", "Soporte prioritario 24/7"],
+    whatsapp: "Volumen a medida",
+  },
+]
 
 export function DemoModal() {
   const { isOpen, closeDemoModal } = useDemoModal()
@@ -44,6 +96,7 @@ export function DemoModal() {
           usesIdealistaTools: "",
           weeklyLeadVolume: "",
           usesCrm: "",
+          plan: "",
           acceptsRgpd: false,
         })
       }, 300)
@@ -65,12 +118,14 @@ export function DemoModal() {
     e.preventDefault()
     if (step === 1) {
       // Basic validation for step 1
-      if (demoForm.name && demoForm.email && demoForm.acceptsRgpd) {
+      if (demoForm.name && demoForm.email) {
         setStep(2)
-      } else if (!demoForm.acceptsRgpd) {
-        alert("Debes aceptar la Política de Privacidad para continuar.")
       }
     } else if (step === 2) {
+      if (!demoForm.acceptsRgpd) {
+        alert("Debes aceptar la Política de Privacidad para continuar.")
+        return
+      }
       // Submit via webhook
       setIsSubmitting(true)
       try {
@@ -113,7 +168,16 @@ export function DemoModal() {
           "flex items-start justify-between gap-4 p-6 border-b transition-colors",
           step >= 2 ? "border-background/20" : "border-border"
         )}>
-          <div className="space-y-1">
+          <Button 
+            variant="ghost" 
+            size="icon" 
+            onClick={closeDemoModal} 
+            aria-label="Cerrar"
+            className={cn(step >= 2 && "text-background hover:bg-background/20 hover:text-background", "-ml-2")}
+          >
+            <X className="w-5 h-5" />
+          </Button>
+          <div className="space-y-1 text-right">
             <h3 className="text-lg font-semibold">
               {step === 1 && "Reservar demo"}
               {step === 2 && "Unos detalles más..."}
@@ -130,15 +194,6 @@ export function DemoModal() {
               </p>
             )}
           </div>
-          <Button 
-            variant="ghost" 
-            size="icon" 
-            onClick={closeDemoModal} 
-            aria-label="Cerrar"
-            className={cn(step >= 2 && "text-background hover:bg-background/20 hover:text-background")}
-          >
-            <X className="w-4 h-4" />
-          </Button>
         </div>
 
         {step === 3 ? (
@@ -182,7 +237,111 @@ export function DemoModal() {
           // Form Steps
           <form className="p-6 space-y-6" onSubmit={handleNextStep}>
             {step === 1 && (
-              <div className="space-y-4 animate-in slide-in-from-right-8 duration-300">
+              <div className="space-y-6 animate-in slide-in-from-right-8 duration-300">
+                <div className="space-y-4 text-left">
+                  <div className="flex items-center justify-between">
+                    <label className="text-sm font-medium text-muted-foreground flex items-center gap-1.5">
+                      Plan seleccionado: <span className="text-foreground font-bold">{demoForm.plan}</span>
+                    </label>
+                  </div>
+
+                  {/* Plan Selector Grid (Always visible) */}
+                  <div className="grid grid-cols-2 gap-3">
+                    {modalPlans.map((plan) => (
+                      <label 
+                        key={plan.name} 
+                        className={cn(
+                          "relative flex flex-col p-3.5 border rounded-xl cursor-pointer transition-all text-left group",
+                          demoForm.plan === plan.name 
+                            ? "border-foreground bg-secondary/20 ring-1 ring-foreground shadow-sm" 
+                            : "border-border hover:border-foreground/50 hover:bg-secondary/10"
+                        )}
+                      >
+                        <input
+                          type="radio"
+                          name="plan"
+                          value={plan.name}
+                          className="sr-only"
+                          checked={demoForm.plan === plan.name}
+                          onChange={(e) => setDemoForm((s) => ({ ...s, plan: e.target.value }))}
+                        />
+                        <div className="flex justify-between items-start gap-2">
+                          <span className={cn(
+                            "font-semibold text-sm leading-none",
+                            demoForm.plan === plan.name ? "text-foreground" : "text-muted-foreground group-hover:text-foreground transition-colors"
+                          )}>{plan.name}</span>
+                          <span className="text-[11px] font-medium text-foreground whitespace-nowrap leading-none">
+                            {plan.price}{plan.period}
+                          </span>
+                        </div>
+                      </label>
+                    ))}
+                  </div>
+
+                  {/* Selected Plan Summary (Beautiful Design) */}
+                  {demoForm.plan && (
+                    <div className={cn(
+                      "relative rounded-2xl border bg-background text-left transition-all mt-2 mb-2",
+                      modalPlans.find(p => p.name === demoForm.plan)?.popular ? "border-foreground shadow-md" : "border-border shadow-sm"
+                    )}>
+                      {modalPlans.find(p => p.name === demoForm.plan)?.popular && (
+                        <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 bg-foreground text-background text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider z-10">
+                          Recomendado
+                        </span>
+                      )}
+
+                      <div className="p-4">
+                        <div className="mb-3 flex justify-between items-start">
+                          <div>
+                            <h3 className="text-lg font-medium text-foreground leading-none">{demoForm.plan}</h3>
+                            <p className="text-[11px] text-muted-foreground mt-1">
+                              {modalPlans.find(p => p.name === demoForm.plan)?.description}
+                            </p>
+                          </div>
+                          <div className="flex items-baseline text-right">
+                            <span className="text-2xl font-light tracking-tight text-foreground leading-none">
+                              {modalPlans.find(p => p.name === demoForm.plan)?.price}
+                            </span>
+                            <span className="text-[10px] text-muted-foreground ml-0.5">
+                              {modalPlans.find(p => p.name === demoForm.plan)?.period}
+                            </span>
+                          </div>
+                        </div>
+
+                        <div className="space-y-2.5">
+                          <p className="text-[9px] font-bold text-muted-foreground uppercase tracking-widest">Incluye</p>
+                          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-y-1.5 gap-x-3">
+                            {modalPlans.find(p => p.name === demoForm.plan)?.features.map((feature, i) => (
+                              <li key={i} className="text-[11px] text-muted-foreground flex items-start gap-1.5">
+                                <CheckCircle2 className="w-3 h-3 text-primary shrink-0 mt-0.5" />
+                                <span className="leading-tight">{feature}</span>
+                              </li>
+                            ))}
+                          </ul>
+
+                          {modalPlans.find(p => p.name === demoForm.plan)?.whatsapp && (
+                            <div className="mt-3 p-2.5 rounded-lg bg-gradient-to-br from-secondary/50 to-secondary/20 border border-border/50">
+                              <div className="flex items-center justify-between mb-1.5">
+                                <div className="inline-flex items-center gap-1 bg-background border border-border px-1.5 py-0.5 rounded text-[9px]">
+                                  <Gift className="w-3 h-3 text-[#E65100]" />
+                                  <span className="font-bold uppercase text-foreground">Regalo Early Adopter</span>
+                                </div>
+                                <span className="text-[9px] text-muted-foreground">(Para siempre)</span>
+                              </div>
+                              <div className="flex justify-between items-end">
+                                <p className="text-[10px] text-muted-foreground line-through">Msjs no incluidos</p>
+                                <p className="text-xs font-bold text-foreground">
+                                  {modalPlans.find(p => p.name === demoForm.plan)?.whatsapp}
+                                </p>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                </div>
+
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="space-y-1.5 text-left">
                     <label className="text-sm font-medium">Nombre</label>
@@ -218,28 +377,6 @@ export function DemoModal() {
                     value={demoForm.phone}
                     onChange={(e) => setDemoForm((s) => ({ ...s, phone: e.target.value }))}
                   />
-                </div>
-
-                <div className="flex items-start gap-2 pt-2">
-                  <input
-                    type="checkbox"
-                    id="rgpd"
-                    className="mt-1 w-4 h-4 rounded border-border text-primary focus:ring-primary"
-                    checked={demoForm.acceptsRgpd}
-                    onChange={(e) => setDemoForm((s) => ({ ...s, acceptsRgpd: e.target.checked }))}
-                    required
-                  />
-                  <label htmlFor="rgpd" className="text-xs text-muted-foreground leading-tight">
-                    He leído y acepto la{" "}
-                    <button 
-                      type="button"
-                      className="underline hover:text-foreground transition-colors" 
-                      onClick={() => setShowPrivacyModal(true)}
-                    >
-                      Política de Privacidad
-                    </button>{" "}
-                    y consiento el tratamiento de mis datos para la gestión de esta solicitud.
-                  </label>
                 </div>
               </div>
             )}
@@ -296,6 +433,28 @@ export function DemoModal() {
                     <option value="No" className="text-foreground bg-background">No</option>
                     <option value="En proceso" className="text-foreground bg-background">En proceso</option>
                   </select>
+                </div>
+
+                <div className="flex items-start gap-2 pt-4 border-t border-background/20">
+                  <input
+                    type="checkbox"
+                    id="rgpd"
+                    className="mt-1 w-4 h-4 rounded border-border text-primary focus:ring-primary bg-background/10 border-transparent"
+                    checked={demoForm.acceptsRgpd}
+                    onChange={(e) => setDemoForm((s) => ({ ...s, acceptsRgpd: e.target.checked }))}
+                    required
+                  />
+                  <label htmlFor="rgpd" className="text-xs text-background/80 leading-tight">
+                    He leído y acepto la{" "}
+                    <button 
+                      type="button"
+                      className="underline hover:text-background transition-colors font-medium" 
+                      onClick={() => setShowPrivacyModal(true)}
+                    >
+                      Política de Privacidad
+                    </button>{" "}
+                    y consiento el tratamiento de mis datos para la gestión de esta solicitud.
+                  </label>
                 </div>
               </div>
             )}
