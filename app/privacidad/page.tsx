@@ -4,6 +4,7 @@ import { PrivacyContent } from "@/components/marketing/privacy-content"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { BackButton } from "@/components/marketing/back-button"
 
 export default function PrivacidadPage() {
   return (
@@ -12,12 +13,7 @@ export default function PrivacidadPage() {
       <section className="pt-32 pb-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <div className="mb-8">
-            <Link href="/">
-              <Button variant="ghost" className="gap-2 -ml-4 text-muted-foreground hover:text-foreground">
-                <ArrowLeft className="w-4 h-4" />
-                Volver a la página principal
-              </Button>
-            </Link>
+            <BackButton />
           </div>
           <h1 className="text-4xl font-bold text-foreground mb-4">Política de Privacidad</h1>
           <p className="text-muted-foreground mb-8">

@@ -48,13 +48,6 @@ export function Testimonials() {
         <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {testimonials.map((testimonial) => (
             <div key={testimonial.author} className="bg-card rounded-2xl border border-border p-6 lg:p-8 flex flex-col">
-              {/* Rating */}
-              <div className="flex gap-1 mb-4">
-                {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-chart-4 text-chart-4" />
-                ))}
-              </div>
-
               {/* Quote */}
               <blockquote className="text-foreground leading-relaxed mb-6 flex-grow">
                 &ldquo;{testimonial.quote}&rdquo;

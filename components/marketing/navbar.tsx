@@ -7,8 +7,8 @@ import { Menu, X } from "lucide-react"
 import { useDemoModal } from "./demo-modal-context"
 
 const navLinks = [
-  { href: "#como-funciona", label: "Cómo Funciona" },
   { href: "#beneficios", label: "Beneficios" },
+  { href: "#como-funciona", label: "Cómo Funciona" },
   { href: "#precios", label: "Precios" },
   { href: "#testimonios", label: "Testimonios" },
   { href: "#faq", label: "FAQ" },

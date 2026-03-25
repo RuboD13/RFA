@@ -20,7 +20,7 @@ export function CTASection() {
 
         {/* Benefits */}
         <div className="flex flex-wrap justify-center gap-4 mt-8">
-          {["Sin tarjeta requerida", "Configuración inicial muy sencilla", "Cancela cuando quieras"].map((benefit) => (
+          {["Integración en 5 min", "Onboarding guiado", "Cancela cuando quieras"].map((benefit) => (
             <div key={benefit} className="flex items-center gap-2 text-sm text-primary-foreground/90 font-normal">
               <CheckCircle2 className="w-4 h-4" />
               <span>{benefit}</span>
