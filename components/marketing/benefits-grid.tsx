@@ -1,25 +1,25 @@
-import { Clock, Database, Calendar, FileCheck, BarChart3, MessageSquare } from "lucide-react"
+import { Clock, Database, Calendar, FileCheck, BarChart3, MessageSquare, FilterIcon, FilterXIcon } from "lucide-react"
 
 const benefits = [
   {
     icon: Clock,
     title: "Evita perseguir leads",
     description:
-      "Automatiza respuestas y recordatorios. Olvídate de perseguir documentación por email o teléfono. Ahorra cientos de horas anuales con cero solicitudes sin respuesta.",
-    highlight: "49 minutos ahorrados por anuncio al día",
+      "Automatiza respuestas y recordatorios. Olvídate de perseguir documentación por email o teléfono. Ahorra cientos de horas anuales.",
+    highlight: "Una media de 49 minutos ahorrados por anuncio al día",
   },
   {
     icon: Database,
     title: "Expediente único por candidato",
     description:
       "Ingresos, documentos y scoring en un solo lugar. Ten todo claro antes de agendar la visita.",
-    highlight: "Un panel, toda la info",
+    highlight: "Un panel, toda la información en un mismo lugar",
   },
   {
-    icon: MessageSquare,
+    icon: FilterIcon,
     title: "Filtro previo a la visita",
     description:
-      "El sistema solicita y valida requisitos automáticamente antes de que pierdas tiempo enseñando el piso.",
+      "El sistema solicita datos personales, DNI, cantidad de ingresos y documentación a cada candidato. Tú solo validas.",
     highlight: "Verificación humana final",
   },
   {
@@ -38,9 +38,8 @@ const benefits = [
   },
   {
     icon: FileCheck,
-    title: "Scoring financiero automático",
-    description:
-      "Calcula el esfuerzo financiero al instante para descartar o avanzar rápido.",
+    title: "Análisis de Requisitos de Aval",
+    description: "Calcula automáticamente si el inquilino necesita aval según ingresos vs precio del alquiler.",
     highlight: "Tasa de esfuerzo clara y disponible continuamente",
   },
 ]
