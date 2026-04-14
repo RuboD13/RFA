@@ -2,24 +2,24 @@ import { Badge } from "@/components/ui/badge"
 
 export function IntegrationsSection() {
   return (
-    <section className="py-20 bg-background border-t border-border">
+    <section className="py-16 sm:py-20 bg-background border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           
           {/* Left: Copy & Portals List */}
-          <div className="space-y-8 order-2 lg:order-1">
+          <div className="space-y-6 sm:space-y-8 order-1">
             <div className="space-y-4">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground tracking-tight leading-[1.1]">
                 Sincronización total con tu ecosistema
               </h2>
-              <p className="text-lg font-normal text-muted-foreground leading-normal">
+              <p className="text-base sm:text-lg font-normal text-muted-foreground leading-normal">
                 No cambies tu forma de trabajar, mejórala. RentAFlow se integra donde ya estás operando para que no pierdas ni un solo lead.
               </p>
             </div>
 
             <div className="space-y-6">
-              <div className="p-6 rounded-2xl bg-secondary/30 border border-border/50">
+              <div className="p-5 sm:p-6 rounded-2xl bg-secondary/30 border border-border/50">
                 <h3 className="font-medium text-foreground mb-2 flex items-center gap-2">
                   <span className="h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
                   Recepción Universal de Leads
@@ -39,12 +39,12 @@ export function IntegrationsSection() {
           </div>
 
           {/* Right: Idealista Visual */}
-          <div className="order-1 lg:order-2">
+          <div className="order-2">
             <div className="relative transform hover:scale-[1.01] transition-transform duration-500">
               {/* Glow effect - Subtle */}
               <div className="absolute inset-0 bg-[#dcfc03] blur-[120px] opacity-10" />
               
-              <div className="relative bg-[#dcfc03] rounded-[2rem] p-10 md:p-12 shadow-xl overflow-hidden border border-black/5">
+              <div className="relative bg-[#dcfc03] rounded-[2rem] p-6 sm:p-8 md:p-12 shadow-xl overflow-hidden border border-black/5">
                 
                 <div className="relative z-10 flex flex-col items-start text-left h-full">
                   
@@ -55,7 +55,7 @@ export function IntegrationsSection() {
                   </div>
 
                   {/* Headline & Copy */}
-                  <div className="space-y-4 mb-14 max-w-full mt-10 w-full">
+                  <div className="space-y-4 mb-10 sm:mb-14 max-w-full mt-8 sm:mt-10 w-full">
                     <h3 className="text-2xl md:text-3xl font-bold text-black leading-tight tracking-tight text-balance">
                       Optimizado para idealista
                     </h3>

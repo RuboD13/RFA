@@ -34,7 +34,7 @@ export function Footer() {
           </div>
 
           {/* Links */}
-          <div className="flex gap-12">
+          <div className="flex flex-col sm:flex-row gap-8 sm:gap-12 w-full md:w-auto">
             <div>
               <h4 className="font-semibold mb-3 text-sm">Producto</h4>
               <ul className="space-y-2">
@@ -70,11 +70,11 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-10 pt-6 border-t border-background/10 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-background/60">
+        <div className="mt-10 pt-6 border-t border-background/10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <p className="text-sm text-background/60 text-left">
             © {new Date().getFullYear()} Rent<span className="font-bold">AFlow</span>. Todos los derechos reservados.
           </p>
-          <div className="flex gap-3">
+          <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-background/10 text-background/80 text-xs font-medium">
               <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
                 <path

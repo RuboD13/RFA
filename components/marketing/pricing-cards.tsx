@@ -97,15 +97,15 @@ export function PricingCards() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-3 gap-8 max-w-6xl mx-auto mb-12">
+        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto mb-12">
           {plans.filter(p => p.name !== "Corporate").map((plan) => (
             <div
               key={plan.name}
               className={cn(
-                "relative p-8 flex flex-col transition-all duration-500",
+                "relative p-6 sm:p-8 flex flex-col transition-all duration-500",
                 plan.popular 
-                  ? "bg-card/50 rounded-3xl shadow-[0_0_40px_-15px_rgba(0,0,0,0.1)] ring-1 ring-primary/20 scale-105 z-10" 
-                  : "bg-transparent border-t border-border/50 hover:border-foreground/20 sm:border-t-0 sm:border-l first:border-l-0"
+                  ? "bg-card/50 rounded-3xl shadow-[0_0_40px_-15px_rgba(0,0,0,0.1)] ring-1 ring-primary/20 lg:scale-105 z-10" 
+                  : "bg-transparent border border-border/50 hover:border-foreground/20 lg:border-t-0 lg:border-l first:border-l-0"
               )}
             >
               {/* Popular Badge */}
@@ -120,13 +120,13 @@ export function PricingCards() {
               {/* Plan Header */}
               <div className="mb-8">
                 <h3 className="text-xl font-medium text-foreground tracking-tight">{plan.name}</h3>
-                <p className="text-sm text-muted-foreground mt-3 h-10 text-pretty font-light">{plan.description}</p>
+                <p className="text-sm text-muted-foreground mt-3 min-h-[2.5rem] sm:h-10 text-pretty font-light">{plan.description}</p>
               </div>
 
               {/* Price */}
               <div className="mb-10">
                 <div className="flex items-baseline gap-1">
-                  <span className="text-5xl font-light tracking-tighter text-foreground">{plan.price}€</span>
+                  <span className="text-4xl sm:text-5xl font-light tracking-tighter text-foreground">{plan.price}€</span>
                   <span className="text-sm text-muted-foreground font-medium">{plan.period}</span>
                 </div>
               </div>
@@ -193,7 +193,7 @@ export function PricingCards() {
         {plans.filter(p => p.name === "Corporate").map((plan) => (
           <div 
             key={plan.name}
-            className="max-w-6xl mx-auto mt-8 bg-gradient-to-br from-primary/10 via-background to-background rounded-[2rem] ring-1 ring-primary/20 p-10 sm:p-14 flex flex-col lg:flex-row gap-10 items-start lg:items-center justify-between overflow-hidden relative"
+            className="max-w-6xl mx-auto mt-8 bg-gradient-to-br from-primary/10 via-background to-background rounded-[2rem] ring-1 ring-primary/20 p-6 sm:p-10 lg:p-14 flex flex-col lg:flex-row gap-8 sm:gap-10 items-start lg:items-center justify-between overflow-hidden relative"
           >
             {/* Abstract background element */}
             <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[100px] pointer-events-none" />
@@ -207,7 +207,7 @@ export function PricingCards() {
               <div className="text-2xl font-light text-foreground">{plan.price}</div>
             </div>
             
-            <div className="lg:w-2/3 flex flex-col sm:flex-row gap-10 items-start sm:items-center justify-between w-full relative z-10">
+            <div className="lg:w-2/3 flex flex-col sm:flex-row gap-8 sm:gap-10 items-start sm:items-center justify-between w-full relative z-10">
               <ul className="grid sm:grid-cols-2 gap-x-12 gap-y-4 flex-grow">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="text-[13px] font-medium text-foreground/80 flex items-start gap-3">
@@ -216,7 +216,7 @@ export function PricingCards() {
                   </li>
                 ))}
               </ul>
-              <Button size="lg" className="shrink-0 h-14 px-10 rounded-xl bg-foreground text-background hover:bg-foreground/90 font-medium transition-all" onClick={openDemoModal}>
+              <Button size="lg" className="w-full sm:w-auto shrink-0 h-14 px-10 rounded-xl bg-foreground text-background hover:bg-foreground/90 font-medium transition-all" onClick={openDemoModal}>
                 {plan.cta}
               </Button>
             </div>

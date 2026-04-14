@@ -68,12 +68,12 @@ function LeadsMockup() {
 
   return (
     <div className="p-4 lg:p-6">
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
         <div>
           <h3 className="font-semibold text-foreground">Leads</h3>
           <p className="text-xs text-muted-foreground">Gestión de clientes potenciales</p>
         </div>
-        <div className="flex gap-2">
+        <div className="flex flex-wrap gap-2">
           <div className="text-xs bg-secondary px-3 py-1.5 rounded-lg">
             Total: <span className="font-semibold">376</span>
           </div>
@@ -84,17 +84,17 @@ function LeadsMockup() {
       </div>
       <div className="space-y-2">
         {leads.map((lead, i) => (
-          <div key={i} className="flex items-center justify-between p-3 bg-secondary/30 rounded-lg">
-            <div className="flex items-center gap-3">
+          <div key={i} className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3 bg-secondary/30 rounded-lg">
+            <div className="flex items-center gap-3 min-w-0">
               <div className="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center">
                 <Users className="w-4 h-4 text-primary" />
               </div>
-              <div>
-                <p className="text-sm font-medium text-foreground">{lead.name}</p>
-                <p className="text-xs text-muted-foreground">{lead.property}</p>
+              <div className="min-w-0">
+                <p className="text-sm font-medium text-foreground truncate">{lead.name}</p>
+                <p className="text-xs text-muted-foreground truncate">{lead.property}</p>
               </div>
             </div>
-            <div className="flex items-center gap-4">
+            <div className="flex items-center justify-between sm:justify-end gap-3 sm:gap-4">
               <span className="text-xs text-muted-foreground">{lead.income}</span>
               <span
                 className={`text-xs px-2 py-1 rounded ${
@@ -124,7 +124,7 @@ function AnunciosMockup() {
 
   return (
     <div className="p-4 lg:p-6">
-      <div className="flex items-center justify-between mb-4">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 mb-4">
         <div>
           <h3 className="font-semibold text-foreground">Centro de Anuncios</h3>
           <p className="text-xs text-muted-foreground">Control operativo y económico por anuncio</p>
@@ -134,16 +134,16 @@ function AnunciosMockup() {
       <div className="space-y-3">
         {anuncios.map((anuncio, i) => (
           <div key={i} className="p-4 border border-border rounded-lg bg-card">
-            <div className="flex items-center justify-between mb-3">
-              <div className="flex items-center gap-2">
-                <span className="font-medium text-sm text-foreground">{anuncio.name}</span>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
+              <div className="flex items-center gap-2 min-w-0">
+                <span className="font-medium text-sm text-foreground truncate">{anuncio.name}</span>
                 <span className="text-xs bg-success/10 text-success px-2 py-0.5 rounded">Activo</span>
               </div>
               <Button size="sm" variant="outline" className="text-xs h-7 bg-transparent">
                 Programar
               </Button>
             </div>
-            <div className="grid grid-cols-6 gap-2 text-center">
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2 text-center">
               {[
                 { label: "Nuevos", value: anuncio.leads },
                 { label: "Emails", value: anuncio.emails },
@@ -234,14 +234,14 @@ function DashboardMockup() {
 
       {/* Estadísticas de la Inmobiliaria */}
       <div className="space-y-4">
-        <div className="flex items-center justify-between">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
             <h3 className="text-sm font-semibold text-foreground">Estadísticas de la Inmobiliaria</h3>
             <p className="text-xs text-muted-foreground">Totales y rendimiento agregados por periodo</p>
           </div>
-          <div className="flex items-center gap-3">
+          <div className="flex flex-col items-start sm:items-end gap-2">
             <span className="text-xs font-medium text-muted-foreground hidden sm:inline-block">01/03/2026 - 31/03/2026</span>
-            <div className="flex items-center gap-1 text-[10px] bg-secondary/30 p-1 rounded-lg">
+            <div className="flex flex-wrap items-center gap-1 text-[10px] bg-secondary/30 p-1 rounded-lg">
               <span className="px-2 py-1 text-muted-foreground cursor-pointer hover:text-foreground">Hoy</span>
               <span className="px-2 py-1 rounded bg-background shadow-sm text-foreground font-medium">Mes</span>
               <span className="px-2 py-1 text-muted-foreground cursor-pointer hover:text-foreground">Mes ant.</span>
@@ -329,7 +329,7 @@ function DashboardMockup() {
             </LineChart>
           </ResponsiveContainer>
         </div>
-        <div className="flex justify-center items-center gap-4 mt-4 text-[10px]">
+        <div className="flex flex-wrap justify-center items-center gap-4 mt-4 text-[10px]">
           <div className="flex items-center gap-1.5"><div className="w-2 h-0.5 bg-success rounded"></div><span className="text-success">Datos Completos</span></div>
           <div className="flex items-center gap-1.5"><div className="w-2 h-0.5 bg-destructive rounded"></div><span className="text-destructive">Descartados</span></div>
           <div className="flex items-center gap-1.5"><div className="w-2 h-0.5 bg-blue-500 rounded"></div><span className="text-blue-500">Leads Totales</span></div>
@@ -451,7 +451,7 @@ function LeadDetailMockup() {
                 Editar
               </Button>
             </div>
-            <div className="grid grid-cols-2 gap-y-4 gap-x-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-4 gap-x-8">
               <div>
                 <p className="text-[10px] uppercase text-muted-foreground font-semibold tracking-wider">NOMBRE</p>
                 <p className="text-sm font-medium text-foreground">Laura Martínez</p>
@@ -641,7 +641,7 @@ function AgendaMockup() {
 
   return (
     <div className="p-4 lg:p-6 bg-card h-full flex flex-col gap-6">
-      <div className="flex justify-between items-start">
+      <div className="flex flex-col sm:flex-row justify-between items-start gap-3">
         <div>
           <h2 className="text-xl font-bold text-foreground">Agenda</h2>
           <p className="text-xs text-muted-foreground">Configura disponibilidad y gestiona visitas.</p>
@@ -694,7 +694,7 @@ function AgendaMockup() {
             ))}
           </div>
 
-          <div className="flex gap-2">
+          <div className="flex flex-wrap gap-2">
             <Button variant="outline" size="sm" className="text-xs h-7">
               Semana anterior
             </Button>
@@ -827,22 +827,24 @@ export function DashboardPreview({ hideHeader = false }: { hideHeader?: boolean 
         )}
 
         {/* Tab Navigation */}
-        <div className="flex flex-wrap justify-center gap-2 mb-8">
-          {tabs.map((tab) => {
-            const Icon = tab.icon
-            return (
-              <Button
-                key={tab.id}
-                variant={activeTab === tab.id ? "default" : "outline"}
-                size="sm"
-                onClick={() => setActiveTab(tab.id)}
-                className="gap-2"
-              >
-                <Icon className="w-4 h-4" />
-                <span className="hidden sm:inline">{tab.label}</span>
-              </Button>
-            )
-          })}
+        <div className="mb-8 overflow-x-auto pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+          <div className="flex w-max min-w-full gap-2 justify-start sm:justify-center">
+            {tabs.map((tab) => {
+              const Icon = tab.icon
+              return (
+                <Button
+                  key={tab.id}
+                  variant={activeTab === tab.id ? "default" : "outline"}
+                  size="sm"
+                  onClick={() => setActiveTab(tab.id)}
+                  className="gap-2 whitespace-nowrap"
+                >
+                  <Icon className="w-4 h-4" />
+                  <span className="text-xs sm:text-sm">{tab.label}</span>
+                </Button>
+              )
+            })}
+          </div>
         </div>
 
         {/* Dashboard Preview with React Mockups */}
@@ -854,7 +856,7 @@ export function DashboardPreview({ hideHeader = false }: { hideHeader?: boolean 
               <div className="w-3 h-3 rounded-full bg-chart-4/60" />
               <div className="w-3 h-3 rounded-full bg-success/60" />
             </div>
-            <div className="flex-1 flex justify-center">
+            <div className="flex-1 hidden sm:flex justify-center">
               <div className="px-4 py-1 bg-background rounded text-xs text-muted-foreground">
                 app.rentaflow.com/dashboard
               </div>

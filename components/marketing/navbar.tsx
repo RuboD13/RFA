@@ -35,13 +35,13 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2">
-            <div className="relative w-10 h-10 lg:w-11 lg:h-11 flex items-center justify-center">
+          <Link href="/" className="flex items-center gap-1.5 sm:gap-2 min-w-0">
+            <div className="relative w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11 flex items-center justify-center shrink-0">
               <img src="/header-logo.png" alt="RentAFlow Logo" className="w-full h-full object-contain" />
             </div>
-            <span className="text-xl text-foreground">
+            <span className="text-lg sm:text-xl text-foreground truncate">
               Rent<span className="font-bold">AFlow</span>
             </span>
           </Link>
@@ -71,7 +71,7 @@ export function Navbar() {
 
           {/* Mobile Menu Button */}
           <button
-            className="lg:hidden p-2 text-foreground"
+            className="lg:hidden p-2.5 -mr-2 text-foreground"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             aria-label="Toggle menu"
           >
@@ -81,13 +81,13 @@ export function Navbar() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden py-4 border-t border-border bg-background">
+          <div className="lg:hidden py-3 border-t border-border bg-background/95 backdrop-blur-md">
             <div className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
+                  className="px-4 py-2.5 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
