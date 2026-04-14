@@ -30,7 +30,7 @@ export function HeroSection() {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center z-20">
         
         <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/70 px-4 py-1.5 text-xs text-muted-foreground mb-6 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-50">
-          Más de 50 agencias ya automatizan la gestión de alquileres con RentAFlow
+          Deja de perder horas filtrando solicitudes de alquiler a mano
         </div>
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-foreground text-balance max-w-5xl leading-[0.95] mb-6 animate-in fade-in slide-in-from-bottom-8 duration-700 delay-100">
           Filtra automáticamente los{" "}
@@ -43,7 +43,7 @@ export function HeroSection() {
 
         {/* Subheadline */}
         <p className="text-lg sm:text-xl font-normal text-muted-foreground max-w-2xl text-pretty mb-10 leading-relaxed animate-in fade-in slide-in-from-bottom-8 duration-700 delay-200">
-          RentAFlow responde a cada interesado, solicita y valida la documentación y agenda visitas por WhatsApp. Tú
+          Rent<span className="font-bold">AFlow</span> responde a cada interesado, solicita y valida la documentación y agenda visitas por WhatsApp. Tú
           solo te centras en enseñar el piso a candidatos que realmente pueden alquilar.
         </p>
 

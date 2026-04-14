@@ -11,6 +11,7 @@ const navLinks = [
   { href: "#como-funciona", label: "Cómo Funciona" },
   { href: "#precios", label: "Precios" },
   { href: "#testimonios", label: "Testimonios" },
+  { href: "#roadmap", label: "Roadmap" },
   { href: "#faq", label: "FAQ" },
 ]
 
@@ -37,19 +38,12 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
-            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-              <svg
-                viewBox="0 0 24 24"
-                fill="none"
-                className="w-5 h-5 text-primary-foreground"
-                stroke="currentColor"
-                strokeWidth="2"
-              >
-                <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-                <path d="M9 22V12h6v10" />
-              </svg>
+            <div className="relative w-10 h-10 lg:w-11 lg:h-11 flex items-center justify-center">
+              <img src="/header-logo.png" alt="RentAFlow Logo" className="w-full h-full object-contain" />
             </div>
-            <span className="text-xl font-bold text-foreground">RentAFlow</span>
+            <span className="text-xl text-foreground">
+              Rent<span className="font-bold">AFlow</span>
+            </span>
           </Link>
 
           {/* Desktop Navigation */}

@@ -8,6 +8,7 @@ import { HowItWorks } from "@/components/marketing/how-it-works"
 import { DashboardPreview } from "@/components/marketing/dashboard-preview"
 import { PricingCards } from "@/components/marketing/pricing-cards"
 import { Testimonials } from "@/components/marketing/testimonials"
+import { Roadmap } from "@/components/marketing/roadmap"
 import { FAQSection } from "@/components/marketing/faq-section"
 import { CTASection } from "@/components/marketing/cta-section"
 import { Footer } from "@/components/marketing/footer"
@@ -25,6 +26,7 @@ export default function HomePage() {
       <DashboardPreview />
       <PricingCards />
       <Testimonials />
+      <Roadmap />
       <FAQSection />
       <CTASection />
       <Footer />

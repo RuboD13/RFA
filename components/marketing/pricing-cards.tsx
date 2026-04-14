@@ -14,7 +14,7 @@ const plans = [
     period: "/mes",
     features: [
       "1 usuario",
-      "100 leads/mes",
+      "150 leads/mes",
       "3 anuncios simultáneos",
       "Respuestas automáticas por email",
       { text: "WhatsApp no incluido", isGift: true, giftText: "50 mensajes de WhatsApp/mes" },
@@ -47,7 +47,7 @@ const plans = [
     period: "/mes",
     features: [
       "6 usuarios",
-      "850 leads/mes",
+      "1000 leads/mes",
       "10 anuncios simultáneos",
       "Roles y permisos personalizados",
       "Multi-agencia / oficinas",

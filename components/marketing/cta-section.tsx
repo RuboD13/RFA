@@ -15,12 +15,12 @@ export function CTASection() {
           ¿Listo para automatizar tus leads de alquileres de todos tus portales inmobiliarios?
         </h2>
         <p className="mt-4 text-lg text-primary-foreground/80 max-w-2xl mx-auto text-pretty font-normal leading-relaxed">
-          Únete a las +50 agencias en toda España que ya usan RentAFlow. Primer mes gratis, sin compromiso.
+          Delega la atención y cualificación de leads a tu propio asistente virtual y recupera tu tiempo desde hoy mismo.
         </p>
 
         {/* Benefits */}
         <div className="flex flex-wrap justify-center gap-4 mt-8">
-          {["Integración en 5 min", "Onboarding guiado", "Cancela cuando quieras"].map((benefit) => (
+          {["Agente IA en WhatsApp con tu marca", "Onboarding guiado", "Cancela cuando quieras"].map((benefit) => (
             <div key={benefit} className="flex items-center gap-2 text-sm text-primary-foreground/90 font-normal">
               <CheckCircle2 className="w-4 h-4" />
               <span>{benefit}</span>

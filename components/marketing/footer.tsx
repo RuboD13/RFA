@@ -21,19 +21,12 @@ export function Footer() {
           {/* Brand */}
           <div className="max-w-xs">
             <Link href="/" className="flex items-center gap-2 mb-3">
-              <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="w-5 h-5 text-primary-foreground"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                >
-                  <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
-                  <path d="M9 22V12h6v10" />
-                </svg>
+              <div className="relative w-8 h-8 flex items-center justify-center bg-white rounded-md overflow-hidden">
+                <img src="/logo.png" alt="RentAFlow Logo" className="w-full h-full object-contain" />
               </div>
-              <span className="text-xl font-bold">RentAFlow</span>
+              <span className="text-xl">
+                Rent<span className="font-bold">AFlow</span>
+              </span>
             </Link>
             <p className="text-sm text-background/70">
               Automatiza tu gestión de alquileres. De lead a contrato sin esfuerzo.
@@ -79,7 +72,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="mt-10 pt-6 border-t border-background/10 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-sm text-background/60">
-            © {new Date().getFullYear()} RentAFlow. Todos los derechos reservados.
+            © {new Date().getFullYear()} Rent<span className="font-bold">AFlow</span>. Todos los derechos reservados.
           </p>
           <div className="flex gap-3">
             <div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-background/10 text-background/80 text-xs font-medium">

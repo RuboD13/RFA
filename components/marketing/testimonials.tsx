@@ -2,8 +2,11 @@ import { Star } from "lucide-react"
 
 const testimonials = [
   {
-    quote:
-      "RentAFlow nos ha permitido gestionar el triple de leads con el mismo equipo. La IA responde en segundos y los inquilinos llegan ya filtrados.",
+    quote: (
+      <>
+        Rent<span className="font-bold">AFlow</span> nos ha permitido gestionar el triple de leads con el mismo equipo. La IA responde en segundos y los inquilinos llegan ya filtrados.
+      </>
+    ),
     author: "Laura Martínez",
     role: "Directora de Operaciones",
     company: "Inmobiliaria SolyMar",
@@ -20,8 +23,11 @@ const testimonials = [
     avatar: "CR",
   },
   {
-    quote:
-      "La gestión de tantos perfiles solicitantes era un caos y nos ocupaba muchas horas de varias personas. Con RentAFlow tenemos todo centralizado, cifrado y listo para firmar. Cumplimos RGPD sin esfuerzo.",
+    quote: (
+      <>
+        La gestión de tantos perfiles solicitantes era un caos y nos ocupaba muchas horas de varias personas. Con Rent<span className="font-bold">AFlow</span> tenemos todo centralizado, cifrado y listo para firmar. Cumplimos RGPD sin esfuerzo.
+      </>
+    ),
     author: "Ana López",
     role: "CEO",
     company: "AlquilaYa",
@@ -40,7 +46,7 @@ export function Testimonials() {
             Lo que dicen nuestros <span className="text-primary">clientes</span>
           </h2>
           <p className="mt-4 text-lg text-muted-foreground text-pretty">
-            Más de 50 agencias en toda España ya confían en RentAFlow para automatizar su gestión de alquileres.
+            Más de 50 agencias en toda España ya confían en Rent<span className="font-bold">AFlow</span> para automatizar su gestión de alquileres.
           </p>
         </div>
 
