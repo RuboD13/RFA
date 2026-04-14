@@ -1,5 +1,3 @@
-import { Star } from "lucide-react"
-
 const testimonials = [
   {
     quote: (
@@ -10,7 +8,6 @@ const testimonials = [
     author: "Laura Martínez",
     role: "Directora de Operaciones",
     company: "Inmobiliaria SolyMar",
-    rating: 5,
     avatar: "LM",
   },
   {
@@ -19,7 +16,6 @@ const testimonials = [
     author: "Carlos Ruiz",
     role: "Agente Senior",
     company: "Fincas Barcelona",
-    rating: 5,
     avatar: "CR",
   },
   {
@@ -31,7 +27,6 @@ const testimonials = [
     author: "Ana López",
     role: "CEO",
     company: "AlquilaYa",
-    rating: 5,
     avatar: "AL",
   },
 ]

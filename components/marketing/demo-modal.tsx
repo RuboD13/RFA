@@ -70,6 +70,7 @@ export function DemoModal() {
     usesIdealistaTools: "",
     weeklyLeadVolume: "",
     usesCrm: "",
+    plan: "",
     acceptsRgpd: false,
   })
 
@@ -151,7 +152,7 @@ export function DemoModal() {
   if (!isOpen) return null
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+    <div className="fixed inset-0 z-50 flex items-start sm:items-center justify-center overflow-y-auto p-4 sm:p-6">
       <div 
         className="absolute inset-0 bg-black/60 backdrop-blur-md" 
         onClick={closeDemoModal}
@@ -159,7 +160,7 @@ export function DemoModal() {
       />
       <div 
         className={cn(
-          "relative w-full max-w-lg rounded-2xl shadow-2xl animate-in fade-in zoom-in-95 duration-200 overflow-hidden transition-colors",
+          "relative my-auto w-full max-w-lg max-h-[calc(100svh-2rem)] sm:max-h-[calc(100svh-3rem)] rounded-2xl shadow-2xl animate-in fade-in zoom-in-95 duration-200 overflow-hidden transition-colors flex flex-col",
           step >= 2 ? "bg-foreground text-background" : "bg-background text-foreground border border-border"
         )}
       >
@@ -198,7 +199,7 @@ export function DemoModal() {
 
         {step === 3 ? (
           // Success Step
-          <div className="p-8 flex flex-col items-center text-center space-y-8 animate-in zoom-in-95 fade-in duration-500">
+          <div className="p-8 overflow-y-auto flex flex-col items-center text-center space-y-8 animate-in zoom-in-95 fade-in duration-500">
             <div className="relative">
               <div className="absolute inset-0 bg-green-500/20 blur-xl rounded-full animate-pulse" />
               <div className="relative w-20 h-20 rounded-full bg-background/10 flex items-center justify-center ring-1 ring-background/20 shadow-lg shadow-green-500/20">
@@ -235,15 +236,17 @@ export function DemoModal() {
           </div>
         ) : (
           // Form Steps
-          <form className="p-6 space-y-6" onSubmit={handleNextStep}>
+          <form className="p-6 space-y-6 overflow-y-auto" onSubmit={handleNextStep}>
             {step === 1 && (
               <div className="space-y-6 animate-in slide-in-from-right-8 duration-300">
                 <div className="space-y-4 text-left">
-                  <div className="flex items-center justify-between">
-                    <label className="text-sm font-medium text-muted-foreground flex items-center gap-1.5">
-                      Plan seleccionado: <span className="text-foreground font-bold">{demoForm.plan}</span>
-                    </label>
-                  </div>
+                  {demoForm.plan && (
+                    <div className="flex items-center justify-between">
+                      <label className="text-sm font-medium text-muted-foreground flex items-center gap-1.5">
+                        Plan seleccionado: <span className="text-foreground font-bold">{demoForm.plan}</span>
+                      </label>
+                    </div>
+                  )}
 
                   {/* Plan Selector Grid (Always visible) */}
                   <div className="grid grid-cols-2 gap-3">
@@ -281,7 +284,7 @@ export function DemoModal() {
                   {/* Selected Plan Summary (Beautiful Design) */}
                   {demoForm.plan && (
                     <div className={cn(
-                      "relative rounded-2xl border bg-background text-left transition-all mt-2 mb-2",
+                      "relative rounded-2xl border bg-background text-left transition-all mt-2 mb-2 overflow-hidden",
                       modalPlans.find(p => p.name === demoForm.plan)?.popular ? "border-foreground shadow-md" : "border-border shadow-sm"
                     )}>
                       {modalPlans.find(p => p.name === demoForm.plan)?.popular && (
@@ -291,18 +294,18 @@ export function DemoModal() {
                       )}
 
                       <div className="p-4">
-                        <div className="mb-3 flex justify-between items-start">
-                          <div>
+                        <div className="mb-3 flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-start">
+                          <div className="min-w-0">
                             <h3 className="text-lg font-medium text-foreground leading-none">{demoForm.plan}</h3>
-                            <p className="text-[11px] text-muted-foreground mt-1">
+                            <p className="text-[11px] text-muted-foreground mt-1 text-pretty">
                               {modalPlans.find(p => p.name === demoForm.plan)?.description}
                             </p>
                           </div>
-                          <div className="flex items-baseline text-right">
-                            <span className="text-2xl font-light tracking-tight text-foreground leading-none">
+                          <div className="flex items-baseline gap-1 text-left sm:text-right">
+                            <span className="text-xl sm:text-2xl font-light tracking-tight text-foreground leading-none">
                               {modalPlans.find(p => p.name === demoForm.plan)?.price}
                             </span>
-                            <span className="text-[10px] text-muted-foreground ml-0.5">
+                            <span className="text-[10px] text-muted-foreground">
                               {modalPlans.find(p => p.name === demoForm.plan)?.period}
                             </span>
                           </div>
@@ -321,14 +324,14 @@ export function DemoModal() {
 
                           {modalPlans.find(p => p.name === demoForm.plan)?.whatsapp && (
                             <div className="mt-3 p-2.5 rounded-lg bg-gradient-to-br from-secondary/50 to-secondary/20 border border-border/50">
-                              <div className="flex items-center justify-between mb-1.5">
+                              <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:justify-between mb-1.5">
                                 <div className="inline-flex items-center gap-1 bg-background border border-border px-1.5 py-0.5 rounded text-[9px]">
                                   <Gift className="w-3 h-3 text-[#E65100]" />
                                   <span className="font-bold uppercase text-foreground">Regalo Early Adopter</span>
                                 </div>
                                 <span className="text-[9px] text-muted-foreground">(Para siempre)</span>
                               </div>
-                              <div className="flex justify-between items-end">
+                              <div className="flex flex-col gap-1 sm:flex-row sm:justify-between sm:items-end">
                                 <p className="text-[10px] text-muted-foreground line-through">Msjs no incluidos</p>
                                 <p className="text-xs font-bold text-foreground">
                                   {modalPlans.find(p => p.name === demoForm.plan)?.whatsapp}

@@ -22,7 +22,7 @@ export function Footer() {
           <div className="max-w-xs">
             <Link href="/" className="flex items-center gap-2 mb-3">
               <div className="relative w-8 h-8 flex items-center justify-center bg-white rounded-md overflow-hidden">
-                <img src="/logo.png" alt="RentAFlow Logo" className="w-full h-full object-contain" />
+                <img src="/header-logo.png" alt="RentAFlow Logo" className="w-full h-full object-contain" />
               </div>
               <span className="text-xl">
                 Rent<span className="font-bold">AFlow</span>

@@ -1,5 +1,3 @@
-import { Badge } from "@/components/ui/badge"
-
 export function IntegrationsSection() {
   return (
     <section className="py-16 sm:py-20 bg-background border-t border-border">

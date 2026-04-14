@@ -1,4 +1,4 @@
-import { Clock, Database, Calendar, FileCheck, BarChart3, MessageSquare, FilterIcon, FilterXIcon } from "lucide-react"
+import { Clock, Database, Calendar, FileCheck, BarChart3, FilterIcon } from "lucide-react"
 
 const benefits = [
   {

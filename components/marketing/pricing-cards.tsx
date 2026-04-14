@@ -3,7 +3,6 @@
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
-import Link from "next/link"
 import { useDemoModal } from "./demo-modal-context"
 
 const plans = [
@@ -212,7 +211,7 @@ export function PricingCards() {
                 {plan.features.map((feature, i) => (
                   <li key={i} className="text-[13px] font-medium text-foreground/80 flex items-start gap-3">
                     <span className="text-primary/50 mt-0.5">•</span>
-                    <span>{feature}</span>
+                    <span>{typeof feature === "string" ? feature : feature.giftText ?? feature.text}</span>
                   </li>
                 ))}
               </ul>

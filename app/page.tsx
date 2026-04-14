@@ -1,6 +1,5 @@
 import { Navbar } from "@/components/marketing/navbar"
 import { HeroSection } from "@/components/marketing/hero-section"
-import { PartnersSection } from "@/components/marketing/partners-section"
 import { OperationalContext } from "@/components/marketing/operational-context"
 import { BenefitsGrid } from "@/components/marketing/benefits-grid"
 import { IntegrationsSection } from "@/components/marketing/integrations-section"
@@ -18,7 +17,6 @@ export default function HomePage() {
     <main className="min-h-screen">
       <Navbar />
       <HeroSection />
-      {/* <PartnersSection /> */}
       <OperationalContext />
       <BenefitsGrid />
       <IntegrationsSection />

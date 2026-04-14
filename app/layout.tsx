@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
-import { Analytics } from "@vercel/analytics/next"
 import { DemoModalProvider } from "@/components/marketing/demo-modal-context"
 import { DemoModal } from "@/components/marketing/demo-modal"
 import "./globals.css"
@@ -26,7 +25,6 @@ export const metadata: Metadata = {
     description: "Convierte leads de alquiler en contratos automáticamente.",
     type: "website",
   },
-    generator: 'v0.app'
 }
 
 export const viewport = {
@@ -47,7 +45,6 @@ export default function RootLayout({
           {children}
           <DemoModal />
         </DemoModalProvider>
-        <Analytics />
       </body>
     </html>
   )
